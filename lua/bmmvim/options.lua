@@ -1,3 +1,5 @@
+local M = {}
+
 local options = {
     -- don't create backup files
     backup = false,
@@ -61,9 +63,13 @@ local options = {
     showmode = false,
 }
 
--- hide "match xx of xx" and other messages during auto-completion
-vim.opt.shortmess:append "c"
+function M.init()
+	-- hide "match xx of xx" and other messages during auto-completion
+	vim.opt.shortmess:append "c"
 
-for k, v in pairs(options) do
-    vim.opt[k] = v
+	for k, v in pairs(options) do
+	    vim.opt[k] = v
+	end
 end
+
+return M

@@ -1,4 +1,4 @@
-local utils = require("utils")
+local utils = require("bmmvim.utils")
 
 -- inspect something
 function _G.inspect(item)

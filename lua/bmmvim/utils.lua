@@ -15,7 +15,12 @@ function M.executable(name)
   return false
 end
 
-function M.refresh_config()
+function M.reload_config()
+    for name, _ in pairs(package.loaded) do
+        if name:match("^bmmvim") then
+            package.loaded[name] = nil
+        end
+    end
     dofile(vim.env.MYVIMRC)
 end
 
