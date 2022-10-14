@@ -15,4 +15,8 @@ function M.executable(name)
   return false
 end
 
+function M.refresh_config()
+    dofile(vim.env.MYVIMRC)
+end
+
 return M

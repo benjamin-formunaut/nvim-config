@@ -1,10 +1,10 @@
+utils = require("utils")
+
 -- reload config on changes
 vim.api.nvim_create_autocmd({ "BufWritePost" }, {
   pattern = "*/.config/nvim/*",
   group = vim.api.nvim_create_augroup("reload_config", { clear = true }),
-  callback = function()
-      dofile(vim.env.MYVIMRC)
-  end,
+  callback = utils.refresh_config,
 })
 
 -- notify when the current file is not in utf-8

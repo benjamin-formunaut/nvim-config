@@ -17,11 +17,6 @@ else
   return
 end
 
--- custom mapping <leader> (see `:h mapleader` for more info)
--- ref https://stackoverflow.com/questions/446269/can-i-use-space-as-mapleader-in-vim
-vim.keymap.set("n", "<SPACE>", "<Nop>")
-vim.g.mapleader = " "
-
 -- enable highlighting embedded lua and python
 vim.g.vimsyn_embed = "lP"
 

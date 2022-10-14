@@ -31,7 +31,7 @@ local options = {
     smartindent = true,
 
     -- time to wait for a mapped sequence to complete (in milliseconds)
-    timeoutlen = 200,
+    timeoutlen = 400,
     -- faster completion (4000ms default)
     updatetime = 300,
 
