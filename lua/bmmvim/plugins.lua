@@ -10,6 +10,9 @@ local plugins = {
         requires = "nvim-treesitter/nvim-treesitter",
     },
 
+    -- autopairs
+    {"windwp/nvim-autopairs"},
+
     -- make it pretty
     {"sainnhe/sonokai"},
 }
