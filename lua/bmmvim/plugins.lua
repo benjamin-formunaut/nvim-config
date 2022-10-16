@@ -21,6 +21,11 @@ local plugins = {
         "nvim-lualine/lualine.nvim",
         requires = {"kyazdani42/nvim-web-devicons", opt = true},
     },
+    {
+        "akinsho/bufferline.nvim",
+        tag = "v2.*",
+        requires = "kyazdani42/nvim-web-devicons",
+    },
 
     -- make it pretty
     {"sainnhe/sonokai"},
