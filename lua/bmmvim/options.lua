@@ -29,8 +29,12 @@ local options = {
     tabstop = 4,
     softtabstop = 4,
     shiftwidth = 4,
-    -- make indenting smarter again
+    autoindent = true,
     smartindent = true,
+
+    -- display tabs as ">-"
+    list = true,
+    listchars = "tab:>-",
 
     -- time to wait for a mapped sequence to complete (in milliseconds)
     timeoutlen = 400,

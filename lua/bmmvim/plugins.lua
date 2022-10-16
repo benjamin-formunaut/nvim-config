@@ -2,6 +2,14 @@ local plugins = {
     -- packer can manage itself
     {"wbthomason/packer.nvim"},
 
+    -- better syntax highlighting
+    {"nvim-treesitter/nvim-treesitter"},
+    {   -- fixes python autoindentation
+        -- ref https://github.com/nvim-treesitter/nvim-treesitter/issues/1136#issuecomment-1127145770
+        "yioneko/nvim-yati",
+        requires = "nvim-treesitter/nvim-treesitter",
+    },
+
     -- make it pretty
     {"sainnhe/sonokai"},
 }
