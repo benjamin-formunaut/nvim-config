@@ -16,6 +16,12 @@ local plugins = {
     -- comments
     {"tpope/vim-commentary"},
 
+    -- line
+    {
+        "nvim-lualine/lualine.nvim",
+        requires = {"kyazdani42/nvim-web-devicons", opt = true},
+    },
+
     -- make it pretty
     {"sainnhe/sonokai"},
 }
