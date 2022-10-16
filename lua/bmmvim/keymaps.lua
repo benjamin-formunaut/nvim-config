@@ -7,6 +7,112 @@
 --   command_mode = "c",
 local M = {}
 
+local wk = require("which-key")
+
+local mappings = {
+    {
+        {},
+        {
+            -- searching
+            n = {"nzzzv", "Next search result"},
+            N = {"Nzzzv", "Previous search result"},
+            ["*"] = {"*zzzv", "Search word under cursor"},
+            -- split resizing
+            -- TODO: replace with plugin
+            ["<Up>"] = {":resize -2<CR>", ""},
+            ["<Down>"] = {":resize +2<CR>", ""},
+            ["<Left>"] = {":vertical resize -2<CR>", ""},
+            ["<Right>"] = {":vertical resize +2<CR>", ""},
+            -- split navigation
+            ["<C-j>"] = {"<C-w>j", "Focus down split"},
+            ["<C-k>"] = {"<C-w>k", "Focus up split"},
+            ["<C-h>"] = {"<C-w>h", "Focus left split"},
+            ["<C-l>"] = {"<C-w>l", "Focus right split"},
+            ["<M-j>"] = {"<C-w>J", "Move split down"},
+            ["<M-k>"] = {"<C-w>K", "Move split up"},
+            ["<M-l>"] = {"<C-w>L", "Move split left"},
+            ["<M-h>"] = {"<C-w>H", "Move split right"},
+            -- buffer navigation
+            ["]b"] = {":bn<CR>", "Next buffer next"},
+            ["[b"] = {":bp<CR>", "Previous buffer"},
+            -- hunk navigation
+            -- ["]h"] = {"<Plug>(GitGutterNextHunk)", "Next hunk"},
+            -- ["[h"] = {"<Plug>(GitGutterPrevHunk)", "Previous hunk"},
+            -- quickfix list navigation
+            ["]q"] = {":cnext<CR>zzzv", "Next quickfix"},
+            ["[q"] = {":cprev<CR>zzzv", "Previous quickfix"},
+            ["]Q"] = {":cfirst<CR>zzzv", "First quickfix"},
+            ["[Q"] = {":clast<CR>zzzv", "Last quickfix"},
+        },
+    },
+    {
+        {prefix = "<leader>"},
+        {
+            f = {
+                name = "File",
+                w = {":w<CR>", "Write"},
+                q = {":q<CR>", "Quit"},
+                x = {":qa!<CR>", "Force quit all"},
+            },
+            b = {
+                name = "Buffer",
+                b = {":buffers", "List"},
+                c = {":bd<CR>", "Close"},
+            },
+            w = {
+                name = "Window",
+                x = {":<C-u>split<CR>", "Split"},
+                v = {":<C-u>vsplit<CR>", "VSplit"},
+            },
+            -- g = {
+            --     name = "Git",
+            --     g = {":Git<CR>", "Status"},
+            --     b = {":Git blame<CR>", "Blame"},
+            --     d = {":Git diff<CR>", "Diff"},
+            --     l = {"Git log<CR>", "Log"},
+            --     h = {":GBrowse!<CR>", "Hub link"},
+            -- },
+            -- h = {
+            --     name = "Hunk",
+            --     l = {":Gqfcf<CR>", "In quickfix list"},
+            --     L = {":Gqf<CR>", "In quickfix list"},
+            --     p = {":GitGutterPreviewHunk<CR>", "Preview"},
+            --     s = {":GitGutterStageHunk<CR>", "Stage"},
+            --     u = {":GitGutterUndoHunk<CR>", "Undo"},
+            -- },
+            q = {
+                name = "Quickfix list",
+                q = {":copen<CR>", "Open"},
+                c = {":cclose<CR>", "Close"},
+            },
+            v = {
+                name = "Vim config",
+                r = {":Reload<CR>", "Reload"},
+            },
+        },
+    },
+    {
+        {mode = "v"},
+        {
+            -- maintain visual mode after horizontal move
+            ["<"] = {"<gv", "Move left"},
+            [">"] = {">gv", "Move right"},
+            -- vertucal visual block move
+            J = {":m '>+1<CR>gv=gv", "Move up"},
+            K = {":m '<-2<CR>gv=gv", "Move Down"},
+        },
+    },
+    {
+        {mode = "v", prefix = "<leader>"},
+        {
+            -- g = {
+            --     name = "Git",
+            --     h = {":'<,'>GBrowse!<CR>", "Hub Link"},
+            -- },
+        },
+    },
+}
+
 local keymap = vim.keymap
 
 function M.init()
@@ -16,110 +122,15 @@ function M.init()
     vim.g.mapleader = " "
     vim.g.maplocalleader = " "
 
-    -- searching
-    keymap.set("n", "n", "nzzzv")
-    keymap.set("n", "N", "Nzzzv")
-    keymap.set("n", "*", "*zzzv")
+    for _, register_args in ipairs(mappings) do
+        opts, maps = unpack(register_args)
+        wk.register(maps, opts)
+    end
+
+    -- TODO: find a way to map remaining via which-key
     keymap.set("n", "<Leader>/", ":noh<cr>")
 
-    -- file navigation <Leader>f
-    keymap.set("n", "<Leader>fw", ":w<CR>")
-    keymap.set("n", "<Leader>fq", ":q<CR>")
-    keymap.set("n", "<Leader>fx", ":qa!<CR>")
-    -- keymap.set("n", "<Leader>ft", ":NERDTreeToggle<CR>")
-    -- keymap.set("n", "<Leader>fo", ":NERDTreeFind<CR>")
-
-    -- find files
-    -- keymap.set("n", "<Leader>ff", ":Files<CR>")
-    -- keymap.set("n", "<Leader>fg", ":GFiles<CR>")
-    -- keymap.set("n", "<Leader>fc", ":GFiles?<CR>")
-    -- keymap.set("n", "<Leader>fh", ":History<CR>")
-
-    -- serach <Leader>s
-    -- keymap.set("n", "<Leader>ss", "<Plug>RgRawSearch ''<CR>")
-    -- keymap.set("n", "<Leader>sr", "<Plug>RgRawSearch")
-    -- keymap.set("n", "<Leader>sw", "<Plug>RgRawWordUnderCursor<CR>")
-    -- keymap.set("v", "<Leader>sw", "<Plug>RgRawVisualSelection<CR>")
-    -- keymap.set("n", "<Leader>st", ":Tags<CR>")
-    -- keymap.set("n", "<Leader>sf", ":BLines<CR>")
-    -- keymap.set("n", "<Leader>sb", ":Lines<CR>")
-
-    -- buffer navigation <Leader>b
-    keymap.set("n", "]b", ":bn<CR>")
-    keymap.set("n", "[b", ":bp<CR>")
-    -- keymap.set("n", "<Leader>bb", ":Buffer<CR>")
-    -- keymap.set("n", "<Leader>bc", ":BD<CR>")
-
-    -- split navigation
-    keymap.set("n", "<Leader>x", ":<C-u>split<CR>")
-    keymap.set("n", "<Leader>v", ":<C-u>vsplit<CR>")
-    keymap.set("n", "<C-j>", "<C-w>j")
-    keymap.set("n", "<C-k>", "<C-w>k")
-    keymap.set("n", "<C-l>", "<C-w>l")
-    keymap.set("n", "<C-h>", "<C-w>h")
-    keymap.set("n", "<M-j>", "<C-w>J")
-    keymap.set("n", "<M-k>", "<C-w>K")
-    keymap.set("n", "<M-l>", "<C-w>L")
-    keymap.set("n", "<M-h>", "<C-w>H")
-    keymap.set("n", "<M-h>", "<C-w>H")
-    -- TODO: replace with plugin
-    keymap.set("n", "<Down>", ":resize +2<CR>")
-    keymap.set("n", "<Up>", ":resize -2<CR>")
-    keymap.set("n", "<Left>", ":vertical resize -2<CR>")
-    keymap.set("n", "<Right>", ":vertical resize +2<CR>")
-
-    -- git <Leader>g
-    -- keymap.set("n", "<Leader>gg", ":Git<CR>")
-    -- keymap.set("n", "<Leader>gb", ":Git blame<CR>")
-    -- keymap.set("n", "<Leader>gd", ":Git diff<CR>")
-    -- keymap.set("n", "<Leader>gl", "Git log<CR>")
-    -- keymap.set("n", "<Leader>gh", ":GBrowse!<CR>")
-    -- keymap.set("v", "<Leader>gh", ":'<,'>GBrowse!<CR>")
-
-    -- TODO: find a mapping for git commit searches
-    -- keymap.set("n", "<Leader>gg", ":Commits<CR>")
-    -- keymap.set("n", "<Leader>gh", ":BCommits<CR>")
-
-    -- hunks <Leader>g
-    -- keymap.set("n", "]h", "<Plug>(GitGutterNextHunk)")
-    -- keymap.set("n", "[h", "<Plug>(GitGutterPrevHunk)")
-    -- keymap.set("n", "<Leader>hl", ":Gqfcf<CR>")
-    -- keymap.set("n", "<Leader>hL", ":Gqf<CR>")
-    -- keymap.set("n", "<Leader>hp", ":GitGutterPreviewHunk<CR>")
-    -- keymap.set("n", "<Leader>hs", ":GitGutterStageHunk<CR>")
-    -- keymap.set("n", "<Leader>hu", ":GitGutterUndoHunk<CR>")
-
-    -- code navigation <Leader>c
-    -- keymap.set("n", "<Leader>ct", ":TagbarToggle<CR>")
-
-    -- quickfix list <Leader>q
-    keymap.set("n", "]q", ":cnext<CR>zzzv")
-    keymap.set("n", "[q", ":cprev<CR>zzzv")
-    keymap.set("n", "]Q", ":cfirst<CR>zzzv")
-    keymap.set("n", "[Q", ":clast<CR>zzzv")
-    keymap.set("n", "<Leader>qq", ":copen<CR>")
-    keymap.set("n", "<Leader>qc", ":cclose<CR>")
-
-    -- vim config <Leader>v ?
-    -- keymap.set("n", "<Leader>vv", ":Commands<CR>")
-    -- keymap.set("n", "<Leader>vm", ":Maps<CR>")
-    -- keymap.set("n", "<Leader>vh", ":Helptags<CR>")
-    -- command Refresh source ~/.config/nvim/init.vim
-    keymap.set("n", "<Leader>vr", ":Refresh<CR>")
-    -- keymap.set("n", "<Leader>vi", ":PlugInstall<CR>")
-    -- keymap.set("n", "<Leader>vi", ":PlugInstall<CR>")
-    -- keymap.set("n", "<Leader>vu", ":PlugUpdate<CR>")
-    -- keymap.set("n", "<Leader>vc", ":PlugClean<CR>")
-
-    -- " Maintain visual mode after shifting
-    keymap.set("v", "<", "<gv")
-    keymap.set("v", ">", ">gv")
-
-    -- move visual block
-    keymap.set("v", "J", ":m '>+1<CR>gv=gv")
-    keymap.set("v", "K", ":m '<-2<CR>gv=gv")
-
-    -- command line
+    -- emacs like cursor motions
     keymap.set("c", "<C-a>", "<Home>")
     keymap.set("c", "<C-e>", "<End>")
     keymap.set("c", "<C-b>", "<Left>")

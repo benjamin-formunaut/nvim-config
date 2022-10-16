@@ -30,6 +30,9 @@ local plugins = {
     -- show indentation level
     {"lukas-reineke/indent-blankline.nvim"},
 
+    -- manage keybinds
+    {"folke/which-key.nvim"},
+
     -- make it pretty
     {"sainnhe/sonokai"},
 }
