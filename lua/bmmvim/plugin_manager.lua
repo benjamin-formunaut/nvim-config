@@ -63,10 +63,10 @@ local function load_configs(plugins)
     local plugin_config_dir = vim.fn.stdpath("config") .. "/lua/bmmvim/config/"
     for _, plugin in ipairs(plugins) do
         local tokens = vim.split(plugin[1], "/")
-        local plugin_name = tokens[#tokens]
+        local plugin_name = tokens[#tokens]:gsub("%.", "-")
         local file_path = plugin_config_dir .. plugin_name .. ".lua"
         if vim.fn.filereadable(file_path) == 1 then
-            require("bmmvim.config." .. plugin_name)
+            require("bmmvim.config." .. plugin_name:gsub("\\.", "-"))
         end
     end
 end
