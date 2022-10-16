@@ -1,7 +1,9 @@
 local plugins = {
     -- packer can manage itself
     {"wbthomason/packer.nvim"},
-    {"qpkorr/vim-bufkill"},
+
+    -- make it pretty
+    {"sainnhe/sonokai"},
 }
 
 return plugins

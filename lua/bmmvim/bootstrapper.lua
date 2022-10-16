@@ -7,6 +7,7 @@ function M.init()
     require("bmmvim.keymaps").init()
     require("bmmvim.commands").init()
     require("bmmvim.autocommands").init()
+    require("bmmvim.colorscheme")
 end
 
 return M
