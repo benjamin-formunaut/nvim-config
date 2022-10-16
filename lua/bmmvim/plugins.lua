@@ -13,6 +13,9 @@ local plugins = {
     -- autopairs
     {"windwp/nvim-autopairs"},
 
+    -- comments
+    {"tpope/vim-commentary"},
+
     -- make it pretty
     {"sainnhe/sonokai"},
 }
