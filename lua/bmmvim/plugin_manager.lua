@@ -17,8 +17,8 @@ local function install()
         -- now we need to install packer.nvim first.
         local packer_url = "https://github.com/wbthomason/packer.nvim"
         vim.api.nvim_echo({ { "Installing packer.nvim", "Type" } }, true, {})
-	-- local install_cmd = string.format("!git clone --depth=1 %s %s", packer_url, install_path)
-	-- vim.cmd(install_cmd)
+        -- local install_cmd = string.format("!git clone --depth=1 %s %s", packer_url, install_path)
+        -- vim.cmd(install_cmd)
         vim.fn.system {"git", "clone", "--depth", "1", packer_url, install_path}
     end
     return fresh_install
@@ -59,9 +59,22 @@ local function startup(plugins, fresh_install)
     end
 end
 
+local function load_configs(plugins)
+    local plugin_config_dir = vim.fn.stdpath("config") .. "/lua/bmmvim/config/"
+    for _, plugin in ipairs(plugins) do
+        local tokens = vim.split(plugin[1], "/")
+        local plugin_name = tokens[#tokens]
+        local file_path = plugin_config_dir .. plugin_name .. ".lua"
+        if vim.fn.filereadable(file_path) == 1 then
+            require("bmmvim.config." .. plugin_name)
+        end
+    end
+end
+
 function M.init(plugins)
     local fresh_install = install()
     startup(plugins, fresh_install)
+    load_configs(plugins)
 end
 
 function M.sync()
