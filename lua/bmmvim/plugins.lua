@@ -27,6 +27,9 @@ local plugins = {
         requires = "kyazdani42/nvim-web-devicons",
     },
 
+    -- show indentation level
+    {"lukas-reineke/indent-blankline.nvim"},
+
     -- make it pretty
     {"sainnhe/sonokai"},
 }

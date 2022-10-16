@@ -32,9 +32,9 @@ local options = {
     autoindent = true,
     smartindent = true,
 
-    -- display tabs as ">-"
+    -- special display whitespace
     list = true,
-    listchars = "tab:>-",
+    listchars = "tab:ﲒ% ,eol:↲,nbsp:␣,trail:•,extends:,precedes:",
 
     -- time to wait for a mapped sequence to complete (in milliseconds)
     timeoutlen = 400,
@@ -59,8 +59,8 @@ local options = {
     -- scroll offset
     scrolloff = 3,
     sidescrolloff = 3,
-    -- display lines as one long line
-    wrap = false,
+    -- handling long lines
+    wrap = true,
     -- pop up menu height
     pumheight = 10,
     -- hide -- INSERT --
