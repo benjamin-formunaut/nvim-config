@@ -10,7 +10,6 @@ which_key.setup(options)
 
 local mappings = require("bmmvim.keymaps").mappings
 
-for _, register_args in ipairs(mappings) do
-    local opts, maps = unpack(register_args)
+for opts, maps in pairs(mappings) do
     which_key.register(maps, opts)
 end
