@@ -1,6 +1,6 @@
 local plugins = {
     -- packer can manage itself
-    {"wbthomason/packer.nvim"},
+    { "wbthomason/packer.nvim" },
 
     -- better syntax highlighting
     {
@@ -9,7 +9,7 @@ local plugins = {
             require "bmmvim.plugins.configs.treesitter"
         end,
     },
-    {   -- fixes python autoindentation
+    { -- fixes python autoindentation
         -- ref https://github.com/nvim-treesitter/nvim-treesitter/issues/1136#issuecomment-1127145770
         "yioneko/nvim-yati",
         requires = "nvim-treesitter/nvim-treesitter",
@@ -25,12 +25,12 @@ local plugins = {
     },
 
     -- comments
-    {"tpope/vim-commentary"},
+    { "tpope/vim-commentary" },
 
     -- info lines
     {
         "nvim-lualine/lualine.nvim",
-        requires = {"kyazdani42/nvim-web-devicons", opt = true},
+        requires = { "kyazdani42/nvim-web-devicons", opt = true },
         config = function()
             require "bmmvim.plugins.configs.lualine"
         end,
@@ -88,14 +88,14 @@ local plugins = {
     },
     {
         "williamboman/mason-lspconfig.nvim",
-        after = {"mason.nvim", "which-key.nvim"},
+        after = { "mason.nvim", "which-key.nvim" },
         config = function()
             require "bmmvim.plugins.configs.mason_lspconfig"
         end,
     },
     {
         "neovim/nvim-lspconfig",
-        after = {"mason-lspconfig.nvim", "cmp-nvim-lsp"},
+        after = { "mason-lspconfig.nvim", "cmp-nvim-lsp" },
         config = function()
             require "bmmvim.plugins.configs.lspconfig"
         end,
@@ -186,7 +186,7 @@ local function ensure_packer()
 
     if fresh_install then
         vim.api.nvim_echo({ { "Installing packer.nvim", "Type" } }, true, {})
-        vim.fn.system {"git", "clone", "--depth", "1", "https://github.com/wbthomason/packer.nvim", install_path}
+        vim.fn.system { "git", "clone", "--depth", "1", "https://github.com/wbthomason/packer.nvim", install_path }
     end
     return fresh_install
 end
@@ -198,7 +198,7 @@ local function startup(fresh_install)
 
     packer.startup({
         plugins,
-        config=config,
+        config = config,
     })
 
     if fresh_install then

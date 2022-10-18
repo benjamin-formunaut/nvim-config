@@ -21,6 +21,16 @@ end
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 local on_attach = function(client, bufnr)
+    -- autoformat
+    vim.api.nvim_create_autocmd("BufWritePre", {
+        group = vim.api.nvim_create_augroup("lsp_format_sync", { clear = true }),
+        buffer = bufnr,
+        callback = function()
+            vim.lsp.buf.formatting_sync()
+        end,
+
+    })
+
     -- highlight the current variable and its usages in the buffer.
     if client.server_capabilities.documentHighlightProvider then
         vim.cmd([[
@@ -56,6 +66,9 @@ local lua_confg = {
             diagnostics = {
                 -- Get the language server to recognize the `vim` global
                 globals = { "vim" },
+                neededFileStatus = {
+                    ["codestyle-check"] = "Any",
+                },
             },
             workspace = {
                 -- make the server aware of neovim runtime files,
@@ -66,10 +79,6 @@ local lua_confg = {
             },
             format = {
                 enable = true,
-                defaultConfig = {
-                    indent_style = "space",
-                    indent_size = "2",
-                }
             },
             -- Do not send telemetry data containing a randomized but unique identifier
             telemetry = {

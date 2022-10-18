@@ -20,7 +20,7 @@ local options = {
     -- allows neovim to access the system clipboard
     clipboard = "unnamedplus",
     -- no preselect for autocompletion
-    completeopt = {"menu", "menuone", "noselect"},
+    completeopt = { "menu", "menuone", "noselect" },
     -- so that `` is visible in markdown files
     conceallevel = 0,
 
@@ -68,12 +68,12 @@ local options = {
 }
 
 function M.init()
-	-- hide "match xx of xx" and other messages during auto-completion
-	vim.opt.shortmess:append "c"
+    -- hide "match xx of xx" and other messages during auto-completion
+    vim.opt.shortmess:append "c"
 
-	for k, v in pairs(options) do
-	    vim.opt[k] = v
-	end
+    for k, v in pairs(options) do
+        vim.opt[k] = v
+    end
 end
 
 return M

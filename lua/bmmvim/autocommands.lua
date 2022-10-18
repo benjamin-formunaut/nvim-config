@@ -27,7 +27,7 @@ function M.init()
     -- return to last cursor position when opening a file
     vim.api.nvim_create_autocmd({ "BufReadPost" }, {
         pattern = "*",
-        group =  vim.api.nvim_create_augroup("resume_cursor_position", { clear = true }),
+        group = vim.api.nvim_create_augroup("resume_cursor_position", { clear = true }),
         command = [[if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif]]
     })
 
