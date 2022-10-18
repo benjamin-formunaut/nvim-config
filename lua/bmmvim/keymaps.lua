@@ -28,10 +28,6 @@ local mappings = {
             ["<C-k>"] = {"<C-w>k", "Focus up split"},
             ["<C-h>"] = {"<C-w>h", "Focus left split"},
             ["<C-l>"] = {"<C-w>l", "Focus right split"},
-            ["<M-j>"] = {"<C-w>J", "Move split down"},
-            ["<M-k>"] = {"<C-w>K", "Move split up"},
-            ["<M-l>"] = {"<C-w>L", "Move split left"},
-            ["<M-h>"] = {"<C-w>H", "Move split right"},
             -- buffer navigation
             ["]b"] = {":bn<CR>", "Next buffer next"},
             ["[b"] = {":bp<CR>", "Previous buffer"},
