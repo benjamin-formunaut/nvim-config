@@ -53,6 +53,8 @@ local mappings = {
                 w = {":w<CR>", "Write"},
                 q = {":q<CR>", "Quit"},
                 x = {":qa!<CR>", "Force quit all"},
+                t = {":NvimTreeToggle<CR>", "Tree toggle"},
+                o = {":NvimTreeFindFile<CR>", "Tree current"},
             },
             b = {
                 name = "Buffer",

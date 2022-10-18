@@ -40,6 +40,12 @@ local plugins = {
         requires = "nvim-lua/plenary.nvim",
     },
 
+    -- file explorer
+    {
+        "nvim-tree/nvim-tree.lua",
+        requires = "nvim-tree/nvim-web-devicons",
+    },
+
     -- make it pretty
     {"sainnhe/sonokai"},
 }

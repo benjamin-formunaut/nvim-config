@@ -5,6 +5,7 @@ require("bufferline").setup {
         middle_mouse_command = '',
         left_mouse_command = '',
         show_buffer_close_icons = false,
+        show_close_icon = false,
 
         -- display errors
         -- TODO: add styles and highlighting
@@ -16,15 +17,19 @@ require("bufferline").setup {
             style = "underline",
         },
 
-        -- TODO: sidebar offsets
-        -- ref https://github.com/akinsho/bufferline.nvim#sidebar-offsets
+        offsets = {
+            {
+                filetype = "NvimTree",
+                separator = true,
+            },
+        },
 
         -- TODO: custom areas
         -- ref https://github.com/akinsho/bufferline.nvim#custom-areas
     },
     highlights = {
-    buffer_selected = {
-      italic = false
-    },
-  }
+        buffer_selected = {
+            italic = false
+        },
+    }
 }
