@@ -145,6 +145,11 @@ local plugins = {
         after = "cmp-path",
     },
 
+    -- respect editorconfig
+    {
+        "gpanders/editorconfig.nvim",
+    },
+
     -- make it pretty
     {
         "sainnhe/sonokai",
