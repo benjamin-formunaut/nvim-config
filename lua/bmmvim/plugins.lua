@@ -33,6 +33,13 @@ local plugins = {
     -- manage keybinds
     {"folke/which-key.nvim"},
 
+    -- finding things
+    {
+        "nvim-telescope/telescope.nvim",
+        tag = "0.1.0",
+        requires = "nvim-lua/plenary.nvim",
+    },
+
     -- make it pretty
     {"sainnhe/sonokai"},
 }

@@ -56,7 +56,6 @@ local mappings = {
             },
             b = {
                 name = "Buffer",
-                b = {":buffers", "List"},
                 c = {":bd<CR>", "Close"},
             },
             w = {
@@ -64,6 +63,19 @@ local mappings = {
                 x = {":<C-u>split<CR>", "Split"},
                 v = {":<C-u>vsplit<CR>", "VSplit"},
             },
+            s = {
+                name = "Search",
+                s = {":Telescope builtin<CR>", "Telescope"},
+                f = {":Telescope find_files<CR>", "Files"},
+                a = {":Telescope find_files follow=true no_ignore=true hidden=true <CR>", "All files"},
+                b = {":Telescope buffers<CR>", "Buffers"},
+                t = {":Telescope tags<CR>", "Tags"},
+                h = {":Telescope help_tags<CR>", "Help"},
+                w = {":Telescope grep_string<CR>", "Word under curso"},
+                c = { "<cmd> Telescope git_commits <CR>", "git commits" },
+                g = { "<cmd> Telescope git_status <CR>", "git status" },
+                ["/"] = {":Telescope live_grep<CR>", "String"},
+            }, 
             -- g = {
             --     name = "Git",
             --     g = {":Git<CR>", "Status"},
