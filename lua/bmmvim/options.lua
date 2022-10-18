@@ -20,7 +20,7 @@ local options = {
     -- allows neovim to access the system clipboard
     clipboard = "unnamedplus",
     -- no preselect for autocompletion
-    completeopt = { "menuone", "noselect" },
+    completeopt = {"menu", "menuone", "noselect"},
     -- so that `` is visible in markdown files
     conceallevel = 0,
 

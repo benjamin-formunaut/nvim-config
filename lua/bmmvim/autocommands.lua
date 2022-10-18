@@ -6,7 +6,7 @@ function M.init()
         group = vim.api.nvim_create_augroup("reload_config", { clear = true }),
         callback = function(args)
             require("bmmvim.utils").reload_config()
-            if vim.endswith(args.file, "plugins.lua") then
+            if vim.endswith(args.file, "plugins/init.lua") then
                 require("bmmvim.plugins").sync()
             end
         end,

@@ -37,6 +37,11 @@ M.mappings = {
             ["[q"] = {":cprev<CR>zzzv", "Previous quickfix"},
             ["]Q"] = {":cfirst<CR>zzzv", "First quickfix"},
             ["[Q"] = {":clast<CR>zzzv", "Last quickfix"},
+            -- diagnostic naviation
+            ["]e"] = {":lua vim.diagnostic.goto_next()<CR>", "Next diagnostic"},
+            ["[e"] = {":lua vim.diagnostic.goto_prev()<CR>", "Previous diagnostic"},
+            -- see docs
+            K = {":lua vim.lsp.buf.hover()<CR>", "Docs"}
         },
     },
     {
@@ -58,6 +63,9 @@ M.mappings = {
                 name = "Window",
                 x = {":<C-u>split<CR>", "Split"},
                 v = {":<C-u>vsplit<CR>", "VSplit"},
+                ["="] = {"<C-w>=", "Equalize all"},
+                l = {"<C-w>|", "Max widht"},
+                k = {"<C-w>_", "Max height"},
             },
             s = {
                 name = "Search",
@@ -71,7 +79,21 @@ M.mappings = {
                 c = { "<cmd> Telescope git_commits <CR>", "git commits" },
                 g = { "<cmd> Telescope git_status <CR>", "git status" },
                 ["/"] = {":Telescope live_grep<CR>", "String"},
-            }, 
+            },
+            c = {
+                name = "Code",
+                D = {":lua vim.lsp.buf.declaration()<CR>", "Declaration"},
+                d = {":lua vim.lsp.buf.definition()<CR>", "Definition"},
+                i = {":lua vim.lsp.buf.implementation()<CR>", "Implementation"},
+                s = {":lua vim.lsp.buf.signature_help()<CR>", "Signature help"},
+                t = {":lua vim.lsp.buf.type_definition()<CR>", "Type deifinition"},
+                r = {":lua vim.lsp.buf.rename()<CR>", "Rename"},
+                a = {":lua vim.lsp.buf.code_action()<CR>", "Code action"},
+                u = {":lua vim.lsp.buf.references()<CR>", "Usage"},
+                e = {[[:lua vim.diagnostic.open_float({scope = "buffer"})<CR>]], "Diagnostic"},
+                q = {":lua vim.diagnostic.setqflist()<CR>", "Set loclist"},
+                l = {":lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>", "List workspace folders"},
+            },
             -- g = {
             --     name = "Git",
             --     g = {":Git<CR>", "Status"},

@@ -79,6 +79,72 @@ local plugins = {
         end,
     },
 
+    -- lsp
+    {
+        "williamboman/mason.nvim",
+        config = function()
+            require "bmmvim.plugins.configs.mason"
+        end,
+    },
+    {
+        "williamboman/mason-lspconfig.nvim",
+        after = {"mason.nvim", "which-key.nvim"},
+        config = function()
+            require "bmmvim.plugins.configs.mason_lspconfig"
+        end,
+    },
+    {
+        "neovim/nvim-lspconfig",
+        after = {"mason-lspconfig.nvim", "cmp-nvim-lsp"},
+        config = function()
+            require "bmmvim.plugins.configs.lspconfig"
+        end,
+    },
+
+    -- autocompletion & snippets
+    {
+        "rafamadriz/friendly-snippets",
+    },
+    {
+        "hrsh7th/nvim-cmp",
+        after = "friendly-snippets",
+        config = function()
+            require "bmmvim.plugins.configs.cmp"
+        end,
+    },
+    {
+        "L3MON4D3/LuaSnip",
+        after = "nvim-cmp",
+        tag = "v1.*",
+        config = function()
+            require "bmmvim.plugins.configs.luasnip"
+        end,
+    },
+    {
+        "saadparwaiz1/cmp_luasnip",
+        after = "LuaSnip"
+    },
+    {
+        "hrsh7th/cmp-nvim-lua",
+        after = "cmp_luasnip",
+    },
+    {
+        "hrsh7th/cmp-nvim-lsp",
+        after = "cmp-nvim-lua",
+    },
+    {
+        "hrsh7th/cmp-buffer",
+        after = "cmp-nvim-lsp",
+    },
+    {
+        "hrsh7th/cmp-path",
+        after = "cmp-buffer",
+    },
+    {
+        "hrsh7th/cmp-calc",
+        after = "cmp-path",
+    },
+
     -- make it pretty
     {
         "sainnhe/sonokai",
@@ -93,14 +159,14 @@ local config = {
     compile_on_sync = true,
     compile_path = vim.fn.stdpath("data") .. "/site/lua/packer_compiled.lua",
     display = {
-      working_sym = "ﲊ",
-      error_sym = "✗ ",
-      done_sym = " ",
-      removed_sym = " ",
-      moved_sym = "",
-      open_fn = function()
-        return require("packer.util").float { border = "single" }
-      end,
+        working_sym = "ﲊ",
+        error_sym = "✗ ",
+        done_sym = " ",
+        removed_sym = " ",
+        moved_sym = "",
+        open_fn = function()
+            return require("packer.util").float { border = "single" }
+        end,
     },
 }
 
