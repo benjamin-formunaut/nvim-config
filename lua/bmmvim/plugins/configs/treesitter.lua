@@ -1,4 +1,9 @@
-require('nvim-treesitter.configs').setup {
+local treesitter = pcall(require, "nvim-treesitter.configs")
+if not ok then
+    return
+end
+
+local options = {
     highlight = {
         enable = true,
     },
@@ -35,3 +40,5 @@ require('nvim-treesitter.configs').setup {
         "css",
     },
 }
+
+treesitter.setup(options)

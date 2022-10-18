@@ -7,9 +7,7 @@
 --   command_mode = "c",
 local M = {}
 
-local wk = require("which-key")
-
-local mappings = {
+M.mappings = {
     {
         {},
         {
@@ -131,11 +129,6 @@ function M.init()
     keymap.set("n", "<Space>", "<Nop>")
     vim.g.mapleader = " "
     vim.g.maplocalleader = " "
-
-    for _, register_args in ipairs(mappings) do
-        opts, maps = unpack(register_args)
-        wk.register(maps, opts)
-    end
 
     -- TODO: find a way to map remaining via which-key
     keymap.set("n", "<Leader>/", ":noh<cr>")

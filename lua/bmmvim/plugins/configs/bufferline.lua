@@ -1,4 +1,9 @@
-require("bufferline").setup {
+local ok, bufferline = pcall(require, "bufferline")
+if not ok then
+    return
+end
+
+local options = {
     options = {
         -- disable the mouse
         right_mouse_command = '',
@@ -33,3 +38,5 @@ require("bufferline").setup {
         },
     }
 }
+
+bufferline.setup(options)

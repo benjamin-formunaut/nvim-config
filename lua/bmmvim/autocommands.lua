@@ -7,7 +7,7 @@ function M.init()
         callback = function(args)
             require("bmmvim.utils").reload_config()
             if vim.endswith(args.file, "plugins.lua") then
-                require("bmmvim.plugin_manager").sync()
+                require("bmmvim.plugins").sync()
             end
         end,
     })

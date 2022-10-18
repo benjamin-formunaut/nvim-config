@@ -1,4 +1,9 @@
-require("nvim-tree").setup {
+local ok, nvim_tree = pcall(require, "nvim-tree")
+if not ok then
+    return
+end
+
+local options = {
     filters = {
         dotfiles = false,
     },
@@ -72,3 +77,5 @@ require("nvim-tree").setup {
         },
     },
 }
+
+nvim_tree.setup(options)

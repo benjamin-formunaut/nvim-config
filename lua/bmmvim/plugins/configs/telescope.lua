@@ -1,7 +1,9 @@
-local telescope = require("telescope")
-local actions = require("telescope.actions")
+local ok, telescope = pcall(require, "telescope")
+if not ok then
+    return
+end
 
-telescope.setup {
+local options = {
     defaults = {
         vimgrep_arguments = {
             "rg",
@@ -46,3 +48,5 @@ telescope.setup {
         qflist_previewer = require("telescope.previewers").vim_buffer_qflist.new,
     },
 }
+
+telescope.setup(options)
