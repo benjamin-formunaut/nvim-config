@@ -5,10 +5,8 @@ end
 
 local options = {
     options = {
-        -- disable the mouse
-        right_mouse_command = '',
+        -- disable close icon
         middle_mouse_command = '',
-        left_mouse_command = '',
         show_buffer_close_icons = false,
         show_close_icon = false,
 
