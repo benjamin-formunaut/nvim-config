@@ -5,7 +5,7 @@ end
 
 -- configure diagnostic
 vim.diagnostic.config({
-    virtual_text = true,
+    virtual_text = false,
     signs = true,
     underline = true,
     update_in_insert = false,
@@ -18,8 +18,6 @@ for kind, icon in pairs(signs) do
     vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
 end
 
-local capabilities = require("cmp_nvim_lsp").default_capabilities()
-
 local on_attach = function(client, bufnr)
     -- autoformat
     vim.api.nvim_create_autocmd("BufWritePre", {
@@ -29,6 +27,12 @@ local on_attach = function(client, bufnr)
             vim.lsp.buf.formatting_sync()
         end,
 
+    })
+
+    vim.api.nvim_create_autocmd("CursorHold", {
+        group = vim.api.nvim_create_augroup("lsp_diagnosict_float", { clear = true }),
+        buffer = bufnr,
+        callback = vim.diagnostic.open_float,
     })
 
     -- highlight the current variable and its usages in the buffer.
@@ -91,6 +95,8 @@ local language_options = {
     pyright = {
     },
 }
+
+local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 for server, options in pairs(language_options) do
     local merged_options = vim.tbl_extend("keep", options, {
