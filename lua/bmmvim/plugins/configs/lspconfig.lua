@@ -71,7 +71,11 @@ local on_attach = function(client, bufnr)
     vim.api.nvim_create_autocmd("CursorHold", {
         group = vim.api.nvim_create_augroup("lsp_diagnosict_float", { clear = true }),
         buffer = bufnr,
-        callback = vim.diagnostic.open_float,
+        callback = function()
+            vim.diagnostic.open_float({
+                focusable = false,
+            })
+        end,
     })
 
     -- highlight the current variable and its usages in the buffer.

@@ -92,6 +92,7 @@ M.mappings = {
                     vim.diagnostic.open_float({
                         scope = "buffer",
                         header = "File Diagnostics:",
+                        focusable = false,
                         prefix = function(diagnostic, _, _)
                             return tostring(diagnostic.lnum) .. ": "
                         end,
