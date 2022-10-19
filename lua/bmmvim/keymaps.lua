@@ -62,6 +62,7 @@ M.mappings = {
             ["="] = { "<C-w>=", "Equalize all" },
             l = { "<C-w>|", "Max widht" },
             k = { "<C-w>_", "Max height" },
+            z = { ":ZoomToggle<CR>", "Zoom toggle" }
         },
         s = {
             name = "Search",
