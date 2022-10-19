@@ -7,6 +7,7 @@
 --   command_mode = "c",
 local M = {}
 
+
 M.mappings = {
     [{}] = {
         -- searching
@@ -85,7 +86,19 @@ M.mappings = {
             r = { ":lua vim.lsp.buf.rename()<CR>", "Rename" },
             a = { ":lua vim.lsp.buf.code_action()<CR>", "Code action" },
             u = { ":lua vim.lsp.buf.references()<CR>", "Usage" },
-            e = { [[:lua vim.diagnostic.open_float({scope = "buffer"})<CR>]], "Diagnostic" },
+            e = {
+                -- TODO: autocmd from bmmvm.plugins.configs.lspconfig hijacks this
+                function()
+                    vim.diagnostic.open_float({
+                        scope = "buffer",
+                        header = "File Diagnostics:",
+                        prefix = function(diagnostic, _, _)
+                            return tostring(diagnostic.lnum) .. ": "
+                        end,
+                    })
+                end,
+                "Diagnostic",
+            },
             q = { ":lua vim.diagnostic.setqflist()<CR>", "Set loclist" },
             l = { ":lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>", "List workspace folders" },
         },
