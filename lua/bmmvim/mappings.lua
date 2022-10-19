@@ -3,6 +3,7 @@
 --   insert_mode = "i",
 --   visual_mode = "v",
 --   visual_block_mode = "x",
+--   operator_mode = "o",
 --   term_mode = "t",
 --   command_mode = "c",
 local M = {}
@@ -138,6 +139,57 @@ M.fugitive = {
 
     v = {
         ["<leader>gh"] = { ":'<,'>GBrowse!<CR>", "Git Hub Link" },
+    },
+}
+
+M.gitsigns = {
+    n = {
+        -- hunk navigation
+        ["]h"] = {
+            function()
+                if vim.wo.diff then return "]h" end
+                vim.schedule(function() require("gitsigns").next_hunk() end)
+                return "<Ignore>"
+            end,
+            "Jump to next hunk",
+            opts = { expr = true },
+        },
+        ["[h"] = {
+            function()
+                if vim.wo.diff then return "[h" end
+                vim.schedule(function() require("gitsigns").prev_hunk() end)
+                return "<Ignore>"
+            end,
+            "Jump to prev hunk",
+            opts = { expr = true },
+        },
+
+        -- actions
+        -- TODO: see if you want require("gitsigns").diffthis or a diff from another plugin
+        ["<leader>hp"] = {
+            function() require("gitsigns").preview_hunk() end,
+            "Preview hunk",
+        },
+        ["<leader>hb"] = {
+            function() package.loaded.gitsigns.blame_line() end,
+            "Blame line",
+        },
+        ["<leader>ht"] = {
+            function() require("gitsigns").toggle_deleted() end,
+            "Toggle deleted",
+        },
+    },
+
+    -- stage & unstage hunks on the fly
+    [{ "n", "v" }] = {
+        ["<leader>hs"] = { ":Gitsigns stage_hunk<CR>", "Stage hunk" },
+        ["<leader>hr"] = { ":Gitsigns reset_hunk<CR>", "Reset hunk" },
+    },
+
+    -- hunk as text object
+    [{ "o", "x" }] = {
+        ["ih"] = { ":<C-U>Gitsigns select_hunk<CR>", "In hunk" },
+        ["ah"] = { ":<C-U>Gitsigns select_hunk<CR>", "Around hunk" },
     },
 }
 

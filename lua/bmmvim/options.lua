@@ -47,7 +47,7 @@ local options = {
     number = true,
     relativenumber = true,
     -- always show the sign column
-    signcolumn = "yes",
+    signcolumn = "yes:2",
     -- split directions
     splitbelow = true,
     splitright = true,

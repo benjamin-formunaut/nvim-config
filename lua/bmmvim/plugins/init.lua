@@ -158,6 +158,14 @@ local plugins = {
         "simeji/winresizer",
     },
 
+    -- git
+    {
+        "lewis6991/gitsigns.nvim",
+        config = function()
+            require("bmmvim.utils").configure_plugin("gitsigns")
+        end,
+    },
+
     -- make it pretty
     {
         "sainnhe/sonokai",
