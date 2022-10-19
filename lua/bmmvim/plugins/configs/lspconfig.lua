@@ -54,38 +54,48 @@ local on_attach = function(client, bufnr)
     end
 end
 
-local lua_confg = {
-    on_attach = on_attach,
-    capabilities = capabilities,
-    settings = {
-        Lua = {
-            runtime = {
-                -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
-                version = "LuaJIT",
-            },
-            diagnostics = {
-                -- Get the language server to recognize the `vim` global
-                globals = { "vim" },
-                neededFileStatus = {
-                    ["codestyle-check"] = "Any",
+local language_options = {
+    -- lua
+    sumneko_lua = {
+        settings = {
+            Lua = {
+                runtime = {
+                    -- Tell the language server which version of Lua you're using
+                    version = "LuaJIT",
                 },
-            },
-            workspace = {
-                -- make the server aware of neovim runtime files,
-                -- ref https://github.com/sumneko/lua-language-server/wiki/Libraries#link-to-workspace
-                library = vim.api.nvim_get_runtime_file("", true),
-                maxPreload = 2000,
-                preloadFileSize = 50000,
-            },
-            format = {
-                enable = true,
-            },
-            -- Do not send telemetry data containing a randomized but unique identifier
-            telemetry = {
-                enable = false,
+                diagnostics = {
+                    -- Get the language server to recognize the `vim` global
+                    globals = { "vim" },
+                    neededFileStatus = {
+                        ["codestyle-check"] = "Any",
+                    },
+                },
+                workspace = {
+                    -- make the server aware of neovim runtime files,
+                    -- ref https://github.com/sumneko/lua-language-server/wiki/Libraries#link-to-workspace
+                    library = vim.api.nvim_get_runtime_file("", true),
+                    maxPreload = 2000,
+                    preloadFileSize = 50000,
+                },
+                format = {
+                    enable = true,
+                },
+                -- Do not send telemetry data containing a randomized but unique identifier
+                telemetry = {
+                    enable = false,
+                },
             },
         },
     },
+    -- python
+    pyright = {
+    },
 }
 
-lspconfig.sumneko_lua.setup(lua_confg)
+for server, options in pairs(language_options) do
+    local merged_options = vim.tbl_extend("keep", options, {
+        on_attach = on_attach,
+        capabilities = capabilities,
+    })
+    lspconfig[server].setup(merged_options)
+end
