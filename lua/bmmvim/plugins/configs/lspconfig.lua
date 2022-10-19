@@ -3,6 +3,10 @@ if not ok then
     return
 end
 
+------------------------------------------------------------------------
+-- Diagnostic
+------------------------------------------------------------------------
+
 -- configure diagnostic
 vim.diagnostic.config({
     virtual_text = false,
@@ -11,12 +15,48 @@ vim.diagnostic.config({
     update_in_insert = false,
     severity_sort = true,
 })
+
 -- change diagnostic signs.
 local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
 for kind, icon in pairs(signs) do
     local hl = "DiagnosticSign" .. kind
     vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
 end
+
+-- only show the most severe diagnostic sign
+---custom namespace
+local name_space = vim.api.nvim_create_namespace("severe-diagnostics")
+
+---reference to the original handler
+local orig_signs_handler = vim.diagnostic.handlers.signs
+
+-- Override the built-in signs handler
+vim.diagnostic.handlers.signs = {
+    show = function(_, bufnr, _, opts)
+        -- get all diagnostics from the buffer
+        local diagnostics = vim.diagnostic.get(bufnr)
+
+        -- Find the "worst" diagnostic per line
+        local max_severity_per_line = {}
+        for _, diagnostic in pairs(diagnostics) do
+            local max = max_severity_per_line[diagnostic.lnum]
+            if not max or diagnostic.severity < max.severity then
+                max_severity_per_line[diagnostic.lnum] = diagnostic
+            end
+        end
+
+        -- pass filtered diagnostics to original handler
+        local filtered_diagnostics = vim.tbl_values(max_severity_per_line)
+        orig_signs_handler.show(name_space, bufnr, filtered_diagnostics, opts)
+    end,
+    hide = function(_, bufnr)
+        orig_signs_handler.hide(name_space, bufnr)
+    end,
+}
+
+------------------------------------------------------------------------
+-- Lspconfig
+------------------------------------------------------------------------
 
 local on_attach = function(client, bufnr)
     -- autoformat
@@ -26,7 +66,6 @@ local on_attach = function(client, bufnr)
         callback = function()
             vim.lsp.buf.formatting_sync()
         end,
-
     })
 
     vim.api.nvim_create_autocmd("CursorHold", {
