@@ -150,6 +150,11 @@ local plugins = {
         "gpanders/editorconfig.nvim",
     },
 
+    -- resize windows
+    {
+        "simeji/winresizer",
+    },
+
     -- make it pretty
     {
         "sainnhe/sonokai",

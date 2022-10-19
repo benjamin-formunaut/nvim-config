@@ -14,12 +14,6 @@ M.mappings = {
         n = { "nzzzv", "Next search result" },
         N = { "Nzzzv", "Previous search result" },
         ["*"] = { "*zzzv", "Search word under cursor" },
-        -- split resizing
-        -- TODO: replace with plugin
-        ["<Up>"] = { ":resize -2<CR>", "" },
-        ["<Down>"] = { ":resize +2<CR>", "" },
-        ["<Left>"] = { ":vertical resize -2<CR>", "" },
-        ["<Right>"] = { ":vertical resize +2<CR>", "" },
         -- split navigation
         ["<C-j>"] = { "<C-w>j", "Focus down split" },
         ["<C-k>"] = { "<C-w>k", "Focus up split" },
