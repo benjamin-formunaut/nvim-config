@@ -6,7 +6,7 @@ local plugins = {
     {
         "nvim-treesitter/nvim-treesitter",
         config = function()
-            require "bmmvim.plugins.configs.treesitter"
+            require("bmmvim.utils").configure_plugin("treesitter")
         end,
     },
     { -- fixes python autoindentation
@@ -20,19 +20,21 @@ local plugins = {
     {
         "windwp/nvim-autopairs",
         config = function()
-            require "bmmvim.plugins.configs.autopairs"
+            require("bmmvim.utils").configure_plugin("autopairs")
         end,
     },
 
     -- comments
-    { "tpope/vim-commentary" },
+    {
+        "tpope/vim-commentary",
+    },
 
     -- info lines
     {
         "nvim-lualine/lualine.nvim",
         requires = { "kyazdani42/nvim-web-devicons", opt = true },
         config = function()
-            require "bmmvim.plugins.configs.lualine"
+            require("bmmvim.utils").configure_plugin("lualine")
         end,
     },
     {
@@ -40,7 +42,7 @@ local plugins = {
         tag = "v2.*",
         requires = "kyazdani42/nvim-web-devicons",
         config = function()
-            require "bmmvim.plugins.configs.bufferline"
+            require("bmmvim.utils").configure_plugin("bufferline")
         end,
     },
 
@@ -48,7 +50,7 @@ local plugins = {
     {
         "lukas-reineke/indent-blankline.nvim",
         config = function()
-            require "bmmvim.plugins.configs.indent_blankline"
+            require("bmmvim.utils").configure_plugin("indent_blankline")
         end,
     },
 
@@ -56,7 +58,7 @@ local plugins = {
     {
         "folke/which-key.nvim",
         config = function()
-            require "bmmvim.plugins.configs.which_key"
+            require("bmmvim.utils").configure_plugin("which_key")
         end,
     },
 
@@ -66,7 +68,7 @@ local plugins = {
         tag = "0.1.0",
         requires = "nvim-lua/plenary.nvim",
         config = function()
-            require "bmmvim.plugins.configs.telescope"
+            require("bmmvim.utils").configure_plugin("telescope", { load_keys = true })
         end,
     },
 
@@ -75,7 +77,7 @@ local plugins = {
         "nvim-tree/nvim-tree.lua",
         requires = "nvim-tree/nvim-web-devicons",
         config = function()
-            require "bmmvim.plugins.configs.nvim_tree"
+            require("bmmvim.utils").configure_plugin("nvim_tree", { load_keys = true })
         end,
     },
 
@@ -83,21 +85,21 @@ local plugins = {
     {
         "williamboman/mason.nvim",
         config = function()
-            require "bmmvim.plugins.configs.mason"
+            require("bmmvim.utils").configure_plugin("mason")
         end,
     },
     {
         "williamboman/mason-lspconfig.nvim",
         after = { "mason.nvim", "which-key.nvim" },
         config = function()
-            require "bmmvim.plugins.configs.mason_lspconfig"
+            require("bmmvim.utils").configure_plugin("mason_lspconfig")
         end,
     },
     {
         "neovim/nvim-lspconfig",
         after = { "mason-lspconfig.nvim", "cmp-nvim-lsp" },
         config = function()
-            require "bmmvim.plugins.configs.lspconfig"
+            require("bmmvim.utils").configure_plugin("lspconfig", { load_keys = true })
         end,
     },
 
@@ -108,8 +110,9 @@ local plugins = {
     {
         "hrsh7th/nvim-cmp",
         after = "friendly-snippets",
+        -- TODO: check if you wan't to put mappings in module
         config = function()
-            require "bmmvim.plugins.configs.cmp"
+            require("bmmvim.utils").configure_plugin("cmp")
         end,
     },
     {
@@ -117,7 +120,7 @@ local plugins = {
         after = "nvim-cmp",
         tag = "v1.*",
         config = function()
-            require "bmmvim.plugins.configs.luasnip"
+            require("bmmvim.utils").configure_plugin("luasnip")
         end,
     },
     {
@@ -213,8 +216,7 @@ local function startup(fresh_install)
         if not status then
             vim.notify(
                 "File packer_compiled.lua not found: run PackerSync to fix!",
-                vim.log.levels.ERROR,
-                { title = "nvim-config" }
+                vim.log.levels.ERROR
             )
         end
     end

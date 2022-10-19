@@ -7,7 +7,7 @@ local options = {
     swapfile = false,
     -- the encoding written to a file
     fileencoding = "utf-8",
-    -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
+    -- if a file is being edited by another program it is not allowed to be edited
     writebackup = false,
     -- enable persistent undo
     undofile = true,
@@ -68,6 +68,12 @@ local options = {
 }
 
 function M.init()
+    -- follow this Leader
+    -- ref https://stackoverflow.com/questions/446269/can-i-use-space-as-mapLeader-in-vim
+    vim.keymap.set("n", "<Space>", "<Nop>")
+    vim.g.mapleader = " "
+    vim.g.maplocalleader = " "
+
     -- hide "match xx of xx" and other messages during auto-completion
     vim.opt.shortmess:append "c"
 
