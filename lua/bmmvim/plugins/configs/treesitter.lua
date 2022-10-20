@@ -14,8 +14,10 @@ local options = {
     yati = {
         enable = true,
     },
+    auto_install = true,
     ensure_installed = {
         -- back end
+        "comment",
         "lua",
         "vim",
         "python",
