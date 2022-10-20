@@ -165,6 +165,19 @@ local plugins = {
             require("bmmvim.utils").configure_plugin("gitsigns")
         end,
     },
+    {
+        "tpope/vim-fugitive",
+        config = function()
+            require("bmmvim.utils").configure_plugin("fugitive", { load_module = false, load_keys = true })
+        end
+    },
+    {
+        "tpope/vim-rhubarb",
+        requires = "vim-fugitive",
+        config = function()
+            require("bmmvim.utils").configure_plugin("rhubarb", { load_module = false, load_keys = true })
+        end
+    },
 
     -- make it pretty
     {

@@ -34,14 +34,21 @@ M.load_mappings = function(section, mapping_opt)
     return true
 end
 
+local default_configure_plugin_opts = {
+    -- TODO: maye use the same default values for all
+    load_module = true,
+    load_keys = false,
+}
 M.configure_plugin = function(plugin_name, opts)
-    opts = opts or {}
+    opts = vim.tbl_extend("keep", opts or {}, default_configure_plugin_opts)
 
-    local module_path = "bmmvim.plugins.configs." .. plugin_name
-    local ok = pcall(require, module_path)
-    if not ok then
-        vim.notify("Unable to initialize plugin " .. plugin_name, vim.log.levels.WARN)
-        return
+    if opts.load_module then
+        local module_path = "bmmvim.plugins.configs." .. plugin_name
+        local ok = pcall(require, module_path)
+        if not ok then
+            vim.notify("Unable to initialize plugin " .. plugin_name, vim.log.levels.WARN)
+            return
+        end
     end
 
     if opts.load_keys and not M.load_mappings(plugin_name) then

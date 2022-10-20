@@ -138,6 +138,11 @@ M.fugitive = {
         ["<leader>gb"] = { ":Git blame<CR>", "Git Blame" },
         ["<leader>gd"] = { ":Git diff<CR>", "Git Diff" },
         ["<leader>gl"] = { "Git log<CR>", "Git Log" },
+    },
+}
+
+M.rhubarb = {
+    n = {
         ["<leader>gh"] = { ":GBrowse!<CR>", "Git Hub link" },
     },
 
