@@ -127,6 +127,9 @@ M.telescope = {
         ["<leader><leader>g"] = { ":Telescope git_status<CR>", "Search git status" },
         ["<leader><leader>/"] = { ":Telescope live_grep<CR>", "Search String" },
     },
+    v = {
+        ["<leader><leader>w"] = { [["zy:Telescope grep_string default_text=<C-r>z]], "Search selection" },
+    },
 }
 
 M.fugitive = {
