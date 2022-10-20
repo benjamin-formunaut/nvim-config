@@ -17,6 +17,9 @@ M.general = {
         ["<leader>fq"] = { ":q<CR>", "File Quit" },
         ["<leader>fc"] = { ":bd<CR>", "File Close" },
         ["<leader>fx"] = { ":qa!<CR>", "File Force quit all" },
+        -- buffer navigation
+        ["]f"] = { ":bn<CR>", "Next buffer next" },
+        ["[f"] = { ":bp<CR>", "Previous buffer" },
         -- searching
         ["n"] = { "nzzzv", "Next search result" },
         ["N"] = { "Nzzzv", "Previous search result" },
@@ -27,9 +30,6 @@ M.general = {
         ["<C-k>"] = { "<C-w>k", "Focus up split" },
         ["<C-h>"] = { "<C-w>h", "Focus left split" },
         ["<C-l>"] = { "<C-w>l", "Focus right split" },
-        -- buffer navigation
-        ["]b"] = { ":bn<CR>", "Next buffer next" },
-        ["[b"] = { ":bp<CR>", "Previous buffer" },
         -- quickfix list navigation
         ["]q"] = { ":cnext<CR>zzzv", "Next quickfix" },
         ["[q"] = { ":cprev<CR>zzzv", "Previous quickfix" },
@@ -39,14 +39,15 @@ M.general = {
         ["<leader>qq"] = { ":copen<CR>", "Quickfix Open" },
         ["<leader>qc"] = { ":cclose<CR>", "Quickfix Close" },
         -- window
-        ["<leader>wx"] = { ":<C-u>split<CR>", "Window Split" },
-        ["<leader>wv"] = { ":<C-u>vsplit<CR>", "Window VSplit" },
-        ["<leader>w="] = { "<C-w>=", "Window Equalize all" },
-        ["<leader>wl"] = { "<C-w>|", "Window Max widht" },
-        ["<leader>wk"] = { "<C-w>_", "Window Max height" },
-        ["<leader>wz"] = { ":ZoomToggle<CR>", "Window Zoom toggle" },
-        -- vim
-        ["<leader>vr"] = { ":Reload<CR>", "Vim Reload" },
+        ["<leader>vx"] = { ":<C-u>split<CR>", "Window Split" },
+        ["<leader>vv"] = { ":<C-u>vsplit<CR>", "Window VSplit" },
+        ["<leader>v="] = { "<C-w>=", "Window Equalize all" },
+        ["<leader>vl"] = { "<C-w>|", "Window Max widht" },
+        ["<leader>vk"] = { "<C-w>_", "Window Max height" },
+        ["<leader>vz"] = { ":ZoomToggle<CR>", "Window Zoom toggle" },
+        -- run things
+        ["<leader>rr"] = { ":Reload<CR>", "Vim Reload" },
+        ["<leader>rs"] = { ":PackerSync<CR>", "SyncPlugins" },
     },
 
     v = {
@@ -78,15 +79,15 @@ M.lspconfig = {
         -- docs in floating window
         ["K"] = { ":lua vim.lsp.buf.hover()<CR>", "Docs" },
         -- code navigation
-        ["<leader>cD"] = { ":lua vim.lsp.buf.declaration()<CR>", "Code Declaration" },
-        ["<leader>cd"] = { ":lua vim.lsp.buf.definition()<CR>", "Code Definition" },
-        ["<leader>ci"] = { ":lua vim.lsp.buf.implementation()<CR>", "Code Implementation" },
-        ["<leader>cs"] = { ":lua vim.lsp.buf.signature_help()<CR>", "Code Signature help" },
-        ["<leader>ct"] = { ":lua vim.lsp.buf.type_definition()<CR>", "Code Type deifinition" },
-        ["<leader>cr"] = { ":lua vim.lsp.buf.rename()<CR>", "Code Rename" },
-        ["<leader>ca"] = { ":lua vim.lsp.buf.code_action()<CR>", "Code Code action" },
-        ["<leader>cu"] = { ":lua vim.lsp.buf.references()<CR>", "Code Usage" },
-        ["<leader>ce"] = {
+        ["<leader>nD"] = { ":lua vim.lsp.buf.declaration()<CR>", "Code Declaration" },
+        ["<leader>nd"] = { ":lua vim.lsp.buf.definition()<CR>", "Code Definition" },
+        ["<leader>ni"] = { ":lua vim.lsp.buf.implementation()<CR>", "Code Implementation" },
+        ["<leader>ns"] = { ":lua vim.lsp.buf.signature_help()<CR>", "Code Signature help" },
+        ["<leader>nt"] = { ":lua vim.lsp.buf.type_definition()<CR>", "Code Type deifinition" },
+        ["<leader>nr"] = { ":lua vim.lsp.buf.rename()<CR>", "Code Rename" },
+        ["<leader>na"] = { ":lua vim.lsp.buf.code_action()<CR>", "Code Code action" },
+        ["<leader>nu"] = { ":lua vim.lsp.buf.references()<CR>", "Code Usage" },
+        ["<leader>ne"] = {
             -- TODO: autocmd from bmmvim.plugins.configs.lspconfig hijacks this
             function()
                 vim.diagnostic.open_float({
@@ -100,8 +101,8 @@ M.lspconfig = {
             end,
             "Code Diagnostic",
         },
-        ["<leader>cq"] = { ":lua vim.diagnostic.setqflist()<CR>", "Code Set loclist" },
-        ["<leader>cl"] = { ":lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>",
+        ["<leader>nq"] = { ":lua vim.diagnostic.setqflist()<CR>", "Code Set loclist" },
+        ["<leader>nl"] = { ":lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>",
             "Code List workspace folders" },
     },
 }
@@ -115,26 +116,26 @@ M.nvim_tree = {
 
 M.telescope = {
     n = {
-        ["<leader>ss"] = { ":Telescope builtin<CR>", "Search Telescope" },
-        ["<leader>sf"] = { ":Telescope find_files<CR>", "Search Files" },
-        ["<leader>sa"] = { ":Telescope find_files follow=true no_ignore=true hidden=true<CR>", "Search All files" },
-        ["<leader>sb"] = { ":Telescope buffers<CR>", "Search Buffers" },
-        ["<leader>st"] = { ":Telescope tags<CR>", "Search Tags" },
-        ["<leader>sh"] = { ":Telescope help_tags<CR>", "Search Help" },
-        ["<leader>sw"] = { ":Telescope grep_string<CR>", "Search Word under cursor" },
-        ["<leader>sc"] = { ":Telescope git_commits<CR>", "Search git commits" },
-        ["<leader>sg"] = { ":Telescope git_status<CR>", "Search git status" },
-        ["<leader>s/"] = { ":Telescope live_grep<CR>", "Search String" },
+        ["<leader><leader><leader>"] = { ":Telescope builtin<CR>", "Search Telescope" },
+        ["<leader><leader>f"] = { ":Telescope find_files<CR>", "Search Files" },
+        ["<leader><leader>a"] = { ":Telescope find_files follow=true no_ignore=true hidden=true<CR>", "Search All files" },
+        ["<leader><leader>b"] = { ":Telescope buffers<CR>", "Search Buffers" },
+        ["<leader><leader>t"] = { ":Telescope tags<CR>", "Search Tags" },
+        ["<leader><leader>h"] = { ":Telescope help_tags<CR>", "Search Help" },
+        ["<leader><leader>w"] = { ":Telescope grep_string<CR>", "Search Word under cursor" },
+        ["<leader><leader>c"] = { ":Telescope git_commits<CR>", "Search git commits" },
+        ["<leader><leader>g"] = { ":Telescope git_status<CR>", "Search git status" },
+        ["<leader><leader>/"] = { ":Telescope live_grep<CR>", "Search String" },
     },
 }
 
 M.fugitive = {
     n = {
-        ["<leader>cg"] = { ":Git<CR>", "Git Status" },
-        ["<leader>cb"] = { ":Git blame<CR>", "Git Blame" },
-        ["<leader>cd"] = { ":Git diff<CR>", "Git Diff" },
-        ["<leader>cl"] = { "Git log<CR>", "Git Log" },
-        ["<leader>ch"] = { ":GBrowse!<CR>", "Git Hub link" },
+        ["<leader>gg"] = { ":Git<CR>", "Git Status" },
+        ["<leader>gb"] = { ":Git blame<CR>", "Git Blame" },
+        ["<leader>gd"] = { ":Git diff<CR>", "Git Diff" },
+        ["<leader>gl"] = { "Git log<CR>", "Git Log" },
+        ["<leader>gh"] = { ":GBrowse!<CR>", "Git Hub link" },
     },
 
     v = {
@@ -145,18 +146,18 @@ M.fugitive = {
 M.gitsigns = {
     n = {
         -- hunk navigation
-        ["]h"] = {
+        ["]g"] = {
             function()
-                if vim.wo.diff then return "]h" end
+                if vim.wo.diff then return "]g" end
                 vim.schedule(function() require("gitsigns").next_hunk() end)
                 return "<Ignore>"
             end,
             "Jump to next hunk",
             opts = { expr = true },
         },
-        ["[h"] = {
+        ["[g"] = {
             function()
-                if vim.wo.diff then return "[h" end
+                if vim.wo.diff then return "[g" end
                 vim.schedule(function() require("gitsigns").prev_hunk() end)
                 return "<Ignore>"
             end,
