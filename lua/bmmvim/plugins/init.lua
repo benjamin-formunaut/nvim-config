@@ -6,7 +6,7 @@ local plugins = {
     {
         "nvim-treesitter/nvim-treesitter",
         config = function()
-            require("bmmvim.utils").configure_plugin("treesitter")
+            require("bmmvim.utils").configure_plugin("treesitter", { load_keys = false })
         end,
     },
     { -- fixes python autoindentation
@@ -20,7 +20,7 @@ local plugins = {
     {
         "windwp/nvim-autopairs",
         config = function()
-            require("bmmvim.utils").configure_plugin("autopairs")
+            require("bmmvim.utils").configure_plugin("autopairs", { load_keys = false })
         end,
     },
 
@@ -34,7 +34,7 @@ local plugins = {
         "nvim-lualine/lualine.nvim",
         requires = { "kyazdani42/nvim-web-devicons", opt = true },
         config = function()
-            require("bmmvim.utils").configure_plugin("lualine")
+            require("bmmvim.utils").configure_plugin("lualine", { load_keys = false })
         end,
     },
     {
@@ -42,7 +42,7 @@ local plugins = {
         tag = "v2.*",
         requires = "kyazdani42/nvim-web-devicons",
         config = function()
-            require("bmmvim.utils").configure_plugin("bufferline")
+            require("bmmvim.utils").configure_plugin("bufferline", { load_keys = false })
         end,
     },
 
@@ -50,7 +50,7 @@ local plugins = {
     {
         "lukas-reineke/indent-blankline.nvim",
         config = function()
-            require("bmmvim.utils").configure_plugin("indent_blankline")
+            require("bmmvim.utils").configure_plugin("indent_blankline", { load_keys = false })
         end,
     },
 
@@ -58,7 +58,7 @@ local plugins = {
     {
         "folke/which-key.nvim",
         config = function()
-            require("bmmvim.utils").configure_plugin("which_key")
+            require("bmmvim.utils").configure_plugin("which_key", { load_keys = false })
         end,
     },
 
@@ -68,7 +68,7 @@ local plugins = {
         tag = "0.1.0",
         requires = "nvim-lua/plenary.nvim",
         config = function()
-            require("bmmvim.utils").configure_plugin("telescope", { load_keys = true })
+            require("bmmvim.utils").configure_plugin("telescope")
         end,
     },
 
@@ -77,7 +77,7 @@ local plugins = {
         "nvim-tree/nvim-tree.lua",
         requires = "nvim-tree/nvim-web-devicons",
         config = function()
-            require("bmmvim.utils").configure_plugin("nvim_tree", { load_keys = true })
+            require("bmmvim.utils").configure_plugin("nvim_tree")
         end,
     },
 
@@ -85,21 +85,21 @@ local plugins = {
     {
         "williamboman/mason.nvim",
         config = function()
-            require("bmmvim.utils").configure_plugin("mason")
+            require("bmmvim.utils").configure_plugin("mason", { load_keys = false })
         end,
     },
     {
         "williamboman/mason-lspconfig.nvim",
         after = { "mason.nvim", "which-key.nvim" },
         config = function()
-            require("bmmvim.utils").configure_plugin("mason_lspconfig")
+            require("bmmvim.utils").configure_plugin("mason_lspconfig", { load_keys = false })
         end,
     },
     {
         "neovim/nvim-lspconfig",
         after = { "mason-lspconfig.nvim", "cmp-nvim-lsp" },
         config = function()
-            require("bmmvim.utils").configure_plugin("lspconfig", { load_keys = true })
+            require("bmmvim.utils").configure_plugin("lspconfig")
         end,
     },
 
@@ -112,7 +112,7 @@ local plugins = {
         after = "friendly-snippets",
         -- TODO: check if you wan't to put mappings in module
         config = function()
-            require("bmmvim.utils").configure_plugin("cmp")
+            require("bmmvim.utils").configure_plugin("cmp", { load_keys = false })
         end,
     },
     {
@@ -120,7 +120,7 @@ local plugins = {
         after = "nvim-cmp",
         tag = "v1.*",
         config = function()
-            require("bmmvim.utils").configure_plugin("luasnip")
+            require("bmmvim.utils").configure_plugin("luasnip", { load_keys = false })
         end,
     },
     {
@@ -162,20 +162,20 @@ local plugins = {
     {
         "lewis6991/gitsigns.nvim",
         config = function()
-            require("bmmvim.utils").configure_plugin("gitsigns")
+            require("bmmvim.utils").configure_plugin("gitsigns", { load_keys = false })
         end,
     },
     {
         "tpope/vim-fugitive",
         config = function()
-            require("bmmvim.utils").configure_plugin("fugitive", { load_module = false, load_keys = true })
+            require("bmmvim.utils").configure_plugin("fugitive", { load_module = false })
         end
     },
     {
         "tpope/vim-rhubarb",
         requires = "vim-fugitive",
         config = function()
-            require("bmmvim.utils").configure_plugin("rhubarb", { load_module = false, load_keys = true })
+            require("bmmvim.utils").configure_plugin("rhubarb", { load_module = false })
         end
     },
 

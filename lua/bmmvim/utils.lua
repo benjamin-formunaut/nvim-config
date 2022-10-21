@@ -35,9 +35,8 @@ M.load_mappings = function(section, mapping_opt)
 end
 
 local default_configure_plugin_opts = {
-    -- TODO: maye use the same default values for all
     load_module = true,
-    load_keys = false,
+    load_keys = true,
 }
 M.configure_plugin = function(plugin_name, opts)
     opts = vim.tbl_extend("keep", opts or {}, default_configure_plugin_opts)
