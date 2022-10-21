@@ -121,6 +121,7 @@ M.telescope = {
         ["<leader><leader>a"] = { ":Telescope find_files follow=true no_ignore=true hidden=true<CR>", "Search All files" },
         ["<leader><leader>b"] = { ":Telescope buffers<CR>", "Search Buffers" },
         ["<leader><leader>t"] = { ":Telescope tags<CR>", "Search Tags" },
+        ["<leader><leader>r"] = { ":Telescope command_history<CR>", "Search Tags" },
         ["<leader><leader>h"] = { ":Telescope help_tags<CR>", "Search Help" },
         ["<leader><leader>w"] = { ":Telescope grep_string<CR>", "Search Word under cursor" },
         ["<leader><leader>c"] = { ":Telescope git_commits<CR>", "Search git commits" },
