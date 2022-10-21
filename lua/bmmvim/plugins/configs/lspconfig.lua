@@ -80,12 +80,6 @@ local on_attach = function(client, bufnr)
 
     -- highlight the current variable and its usages in the buffer.
     if client.server_capabilities.documentHighlightProvider then
-        vim.cmd([[
-        hi! link LspReferenceRead Visual
-        hi! link LspReferenceText Visual
-        hi! link LspReferenceWrite Visual
-        ]])
-
         local gid = vim.api.nvim_create_augroup("lsp_document_highlight", { clear = true })
         vim.api.nvim_create_autocmd("CursorHold", {
             group = gid,

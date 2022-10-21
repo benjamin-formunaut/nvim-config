@@ -183,7 +183,7 @@ local plugins = {
     {
         "sainnhe/sonokai",
         config = function()
-            vim.cmd "colorscheme sonokai"
+            require("bmmvim.utils").configure_plugin("sonokai", { load_keys = false })
         end,
     },
 }

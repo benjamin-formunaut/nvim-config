@@ -20,8 +20,6 @@ helpful references
 
 ## mandatory
 
-- make cursor more visible in insert mode
-
 - sane buffer killing  
 https://github.com/moll/vim-bbye  
 https://github.com/qpkorr/vim-bufkill
@@ -29,6 +27,8 @@ https://github.com/qpkorr/vim-bufkill
 - enable surrounding  
 https://github.com/tpope/vim-surround  
 https://github.com/machakann/vim-sandwich
+
+- make error list navigatable
 
 - make plugin actions repeatable  
 https://github.com/tpope/vim-repeat
@@ -143,4 +143,6 @@ https://github.com/goolord/alpha-nvim
 
 - add markdown preveiw  
 https://github.com/iamcco/markdown-preview.nvim
+
+- make cursor more visible in insert mode
 
