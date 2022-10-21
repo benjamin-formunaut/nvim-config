@@ -11,6 +11,11 @@ function M.init()
     vim.api.nvim_create_user_command("Gqf", "GitGutterQuickFix | copen", { nargs = 0 })
     vim.api.nvim_create_user_command("Gqfcf", "GitGutterQuickFixCurrentFile | copen", { nargs = 0 })
 
+    -- ascii art text
+    if utils.executable("figlet") then
+        vim.api.nvim_create_user_command("Figlet", [[:r!figlet <args>]], { nargs = 1 })
+    end
+
     -- enable toggle window zooming
     vim.cmd [[
     function! s:ZoomToggle() abort
