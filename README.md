@@ -20,8 +20,6 @@ helpful references
 
 ## mandatory
 
-- reenable gx without newtr
-
 - make cursor more visible in insert mode
 
 - sane buffer killing  
