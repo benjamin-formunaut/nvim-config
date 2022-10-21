@@ -148,16 +148,6 @@ local plugins = {
         after = "cmp-path",
     },
 
-    -- respect editorconfig
-    {
-        "gpanders/editorconfig.nvim",
-    },
-
-    -- resize windows
-    {
-        "simeji/winresizer",
-    },
-
     -- git
     {
         "lewis6991/gitsigns.nvim",
@@ -176,6 +166,24 @@ local plugins = {
         requires = "vim-fugitive",
         config = function()
             require("bmmvim.utils").configure_plugin("rhubarb", { load_module = false })
+        end
+    },
+
+    -- respect editorconfig
+    {
+        "gpanders/editorconfig.nvim",
+    },
+
+    -- resize windows
+    {
+        "simeji/winresizer",
+    },
+
+    -- sane buffer killing  
+    {
+        "moll/vim-bbye",
+        config = function()
+            require("bmmvim.utils").configure_plugin("bbye", { load_module = false })
         end
     },
 

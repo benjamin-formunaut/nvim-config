@@ -20,10 +20,6 @@ helpful references
 
 ## mandatory
 
-- sane buffer killing  
-https://github.com/moll/vim-bbye  
-https://github.com/qpkorr/vim-bufkill
-
 - enable surrounding  
 https://github.com/tpope/vim-surround  
 https://github.com/machakann/vim-sandwich

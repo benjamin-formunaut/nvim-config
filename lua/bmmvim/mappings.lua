@@ -15,7 +15,6 @@ M.general = {
         -- files
         ["<leader>fw"] = { ":w<CR>", "File Write" },
         ["<leader>fq"] = { ":q<CR>", "File Quit" },
-        ["<leader>fc"] = { ":bd<CR>", "File Close" },
         ["<leader>fx"] = { ":qa!<CR>", "File Force quit all" },
         -- buffer navigation
         ["]f"] = { ":bn<CR>", "Next buffer next" },
@@ -200,6 +199,12 @@ M.gitsigns = {
     [{ "o", "x" }] = {
         ["ih"] = { ":<C-U>Gitsigns select_hunk<CR>", "In hunk" },
         ["ah"] = { ":<C-U>Gitsigns select_hunk<CR>", "Around hunk" },
+    },
+}
+
+M.bbye = {
+    n = {
+        ["<leader>fc"] = { ":Bdelete<CR>", "File Close" },
     },
 }
 
