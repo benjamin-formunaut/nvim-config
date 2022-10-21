@@ -20,13 +20,19 @@ helpful references
 
 ## mandatory
 
-- autocompletion signature help  
-https://github.com/hrsh7th/cmp-nvim-lsp-signature-help
+- find useful telescope lsp mappings (definition, references,...)
 
 - add autoformatting & lintig  
 https://github.com/jose-elias-alvarez/null-ls.nvim
 
-- add a tagbar  
+- check out which lsp server provides better auto imports
+
+- cmp window order by source
+
+- check out if another colorscheme works better  
+https://github.com/doums/darcula
+
+- add a tagbar (also check out class hierarchy)  
 https://github.com/preservim/tagbar  
 https://github.com/liuchengxu/vista.vim
 
@@ -75,6 +81,8 @@ https://github.com/akinsho/bufferline.nvim
 
 - make lualine prettier / more useful  
 https://github.com/nvim-lualine/lualine.nvim
+
+- open lsp navigations in new split
 
 - organizational mode  
 https://github.com/nvim-orgmode/orgmode  

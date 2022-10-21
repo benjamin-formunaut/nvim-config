@@ -147,6 +147,9 @@ local plugins = {
         "hrsh7th/cmp-calc",
         after = "cmp-path",
     },
+    {
+        "hrsh7th/cmp-nvim-lsp-signature-help",
+    },
 
     -- git
     {

@@ -118,6 +118,7 @@ local options = {
         { name = "nvim_lua" },
         { name = "path" },
         { name = "calc" },
+        { name = "nvim_lsp_signature_help" },
     },
 }
 
