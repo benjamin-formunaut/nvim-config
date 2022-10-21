@@ -20,8 +20,6 @@ helpful references
 
 ## mandatory
 
-- make error list navigatable
-
 - autocompletion signature help  
 https://github.com/hrsh7th/cmp-nvim-lsp-signature-help
 

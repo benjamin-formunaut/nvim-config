@@ -87,7 +87,7 @@ M.lspconfig = {
         ["<leader>na"] = { ":lua vim.lsp.buf.code_action()<CR>", "Code Code action" },
         ["<leader>nu"] = { ":lua vim.lsp.buf.references()<CR>", "Code Usage" },
         ["<leader>ne"] = {
-            -- TODO: autocmd from bmmvim.plugins.configs.lspconfig hijacks this
+            -- TODO: might be less useful than Telescope diagnosts
             function()
                 vim.diagnostic.open_float({
                     scope = "buffer",
@@ -121,6 +121,7 @@ M.telescope = {
         ["<leader><leader>b"] = { ":Telescope buffers<CR>", "Search Buffers" },
         ["<leader><leader>t"] = { ":Telescope tags<CR>", "Search Tags" },
         ["<leader><leader>r"] = { ":Telescope command_history<CR>", "Search Tags" },
+        ["<leader><leader>e"] = { ":Telescope diagnostics bufnr=0<CR>", "Search Tags" },
         ["<leader><leader>h"] = { ":Telescope help_tags<CR>", "Search Help" },
         ["<leader><leader>w"] = { ":Telescope grep_string<CR>", "Search Word under cursor" },
         ["<leader><leader>c"] = { ":Telescope git_commits<CR>", "Search git commits" },
