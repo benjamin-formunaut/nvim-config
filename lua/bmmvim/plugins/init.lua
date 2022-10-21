@@ -179,12 +179,17 @@ local plugins = {
         "simeji/winresizer",
     },
 
-    -- sane buffer killing  
+    -- sane buffer killing
     {
         "moll/vim-bbye",
         config = function()
             require("bmmvim.utils").configure_plugin("bbye", { load_module = false })
         end
+    },
+
+    -- sourroundings opperators
+    {
+        "machakann/vim-sandwich",
     },
 
     -- make it pretty

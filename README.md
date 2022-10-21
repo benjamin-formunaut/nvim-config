@@ -20,14 +20,7 @@ helpful references
 
 ## mandatory
 
-- enable surrounding  
-https://github.com/tpope/vim-surround  
-https://github.com/machakann/vim-sandwich
-
 - make error list navigatable
-
-- make plugin actions repeatable  
-https://github.com/tpope/vim-repeat
 
 - autocompletion signature help  
 https://github.com/hrsh7th/cmp-nvim-lsp-signature-help
@@ -141,4 +134,7 @@ https://github.com/goolord/alpha-nvim
 https://github.com/iamcco/markdown-preview.nvim
 
 - make cursor more visible in insert mode
+
+- enable <C-x> and <C-a> for dates  
+https://github.com/tpope/vim-speeddating
 
