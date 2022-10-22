@@ -120,6 +120,8 @@ M.lspconfig = {
     },
 }
 
+M.null_ls = M.lspconfig
+
 M.nvim_tree = {
     n = {
         ["<leader>ft"] = { ":NvimTreeToggle<CR>", "File Tree toggle" },

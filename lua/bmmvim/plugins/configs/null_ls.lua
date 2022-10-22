@@ -5,6 +5,8 @@ if not ok then
 end
 
 local on_attach = function(client, bufnr)
+    require("bmmvim.utils").load_mappings("lspconfig", { buffer = bufnr })
+
     -- autoformat on save
     -- ref https://github.com/jose-elias-alvarez/null-ls.nvim/wiki/Formatting-on-save
     if client.supports_method("textDocument/formatting") then
