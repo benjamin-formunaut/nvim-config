@@ -1,0 +1,15 @@
+{
+  "Plugin config": {
+    "prefix": "plugconf",
+    "body": [
+      "local ok, ${1:plugin} = pcall(require, \"$1\")",
+      "if not ok then",
+      "\treturn",
+      "end",
+      "",
+      "local options = {}",
+      "",
+      "$1.setup(options)"
+    ]
+  }
+}

@@ -19,127 +19,123 @@ helpful references
 
 ## mandatory
 
-- find useful telescope lsp mappings (definition, references,...)
+-   add a tagbar (also check out class hierarchy)  
+    https://github.com/preservim/tagbar  
+    https://github.com/liuchengxu/vista.vim
 
-- configure snippets (e.g. django)
+-   make quickfix & locations list toggleable  
+    https://github.com/milkypostman/vim-togglelist
 
-- add a tagbar (also check out class hierarchy)  
-  https://github.com/preservim/tagbar  
-  https://github.com/liuchengxu/vista.vim
+-   configure session handling  
+    https://github.com/tpope/vim-obsession
 
-- make quickfix & locations list toggleable  
-  https://github.com/milkypostman/vim-togglelist
+-   add support for spelling
+    https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTINS.md#cspell
 
-- configure session handling  
-  https://github.com/tpope/vim-obsession
+-   integrated terminal  
+    https://github.com/akinsho/toggleterm.nvim  
+    https://github.com/NvChad/nvterm
 
-- add support for spelling
-  https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTINS.md#cspell
+-   add a persistant scratch pad
 
-- integrated terminal  
-  https://github.com/akinsho/toggleterm.nvim  
-  https://github.com/NvChad/nvterm
+-   easily run current file / test  
+    https://github.com/skywind3000/asyncrun.vim
+    https://github.com/michaelb/sniprun
 
-- add a persistant scratch pad
+-   add refactoring actions
+    https://github.com/ThePrimeagen/refactoring.nvim
+    https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTINS.md#refactoring
 
-- easily run current file / test  
-  https://github.com/skywind3000/asyncrun.vim
-  https://github.com/michaelb/sniprun
+-   add visual debugger  
+    https://github.com/puremourning/vimspector/  
+    https://github.com/mfussenegger/nvim-dap/
 
-- add refactoring actions
-  https://github.com/ThePrimeagen/refactoring.nvim
-  https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTINS.md#refactoring
+-   code folding  
+    https://github.com/tmhedberg/simpylfold
 
-- add visual debugger  
-  https://github.com/puremourning/vimspector/  
-  https://github.com/mfussenegger/nvim-dap/
+-   add autosaving  
+    https://github.com/907th/vim-auto-save  
+    https://github.com/Pocco81/auto-save.nvim
 
-- code folding  
-  https://github.com/tmhedberg/simpylfold
+-   command line autocompletion  
+    https://github.com/gelguy/wilder.nvim
 
-- add autosaving  
-  https://github.com/907th/vim-auto-save  
-  https://github.com/Pocco81/auto-save.nvim
+-   add a temporary permanent pad  
+    https://github.com/Konfekt/vim-scratchpad
 
-- command line autocompletion  
-  https://github.com/gelguy/wilder.nvim
+-   add a temporary scratch pad  
+    https://github.com/mtth/scratch.vim
 
-- add a temporary permanent pad  
-  https://github.com/Konfekt/vim-scratchpad
+-   add icons to nvimtree
 
-- add a temporary scratch pad  
-  https://github.com/mtth/scratch.vim
+-   make bufferline prettier / more useful (e.g. ft icons)  
+    https://github.com/akinsho/bufferline.nvim
 
-- add icons to nvimtree
+-   make lualine prettier / more useful  
+    https://github.com/nvim-lualine/lualine.nvim
 
-- make bufferline prettier / more useful (e.g. ft icons)  
-  https://github.com/akinsho/bufferline.nvim
+-   install Dockerfile language server
+    https://github.com/williamboman/mason.nvim/blob/main/PACKAGES.md#dockerfile-language-server
 
-- make lualine prettier / more useful  
-  https://github.com/nvim-lualine/lualine.nvim
+-   open lsp navigations in new split
 
-- install Dockerfile language server
-  https://github.com/williamboman/mason.nvim/blob/main/PACKAGES.md#dockerfile-language-server
+-   organizational mode  
+    https://github.com/nvim-orgmode/orgmode  
+    https://github.com/nvim-neorg/neorg  
+    https://github.com/vimwiki/vimwiki
 
-- open lsp navigations in new split
+-   let gx auto open '<user>/<repo>' in github
 
-- organizational mode  
-  https://github.com/nvim-orgmode/orgmode  
-  https://github.com/nvim-neorg/neorg  
-  https://github.com/vimwiki/vimwiki
+-   properly configure which-key  
+    https://github.com/folke/which-key.nvim
 
-- let gx auto open '<user>/<repo>' in github
+## optional
 
-- properly configure which-key  
-  https://github.com/folke/which-key.nvim
+-   run nvim in firefox  
+    https://github.com/glacambre/firenvim
 
-# optional
+-   improve in file navigation  
+    https://github.com/justinmk/vim-sneak  
+    https://github.com/phaazon/hop.nvim
 
-- run nvim in firefox  
-  https://github.com/glacambre/firenvim
+-   checkout if we like neogit more than fugitive  
+    https://github.com/TimUntersberger/neogit
 
-- improve in file navigation  
-  https://github.com/justinmk/vim-sneak  
-  https://github.com/phaazon/hop.nvim
+-   add treesitter motions  
+    https://github.com/nvim-treesitter/nvim-treesitter-textobjects
 
-- checkout if we like neogit more than fugitive  
-  https://github.com/TimUntersberger/neogit
+-   add more text objects  
+    https://github.com/wellle/targets.vim
 
-- add treesitter motions  
-  https://github.com/nvim-treesitter/nvim-treesitter-textobjects
+-   make % laguage specific  
+    https://github.com/andymass/vim-matchup
 
-- add more text objects  
-  https://github.com/wellle/targets.vim
+-   check out how to use gn  
+    http://vimcasts.org/episodes/operating-on-search-matches-using-gn/
 
-- make % laguage specific  
-  https://github.com/andymass/vim-matchup
+-   something with code actions  
+    https://github.com/neovim/nvim-lspconfig/wiki/Code-Actions
 
-- check out how to use gn  
-  http://vimcasts.org/episodes/operating-on-search-matches-using-gn/
+-   python virtual env support  
+    https://github.com/jmcantrell/vim-virtualenv
 
-- something with code actions  
-  https://github.com/neovim/nvim-lspconfig/wiki/Code-Actions
+-   improve search in buffer ui  
+    https://github.com/kevinhwang91/nvim-hlslens
 
-- python virtual env support  
-  https://github.com/jmcantrell/vim-virtualenv
+-   insert unicode characters  
+    https://github.com/chrisbra/unicode.vim
 
-- improve search in buffer ui  
-  https://github.com/kevinhwang91/nvim-hlslens
+-   autocompletion emojis  
+    https://github.com/hrsh7th/cmp-emoji
 
-- insert unicode characters  
-  https://github.com/chrisbra/unicode.vim
+-   startup screen  
+    https://github.com/mhinz/vim-startify  
+    https://github.com/goolord/alpha-nvim
 
-- autocompletion emojis  
-  https://github.com/hrsh7th/cmp-emoji
+-   add markdown preveiw  
+    https://github.com/iamcco/markdown-preview.nvim
 
-- startup screen  
-  https://github.com/mhinz/vim-startify  
-  https://github.com/goolord/alpha-nvim
+-   make cursor more visible in insert mode
 
-- add markdown preveiw  
-  https://github.com/iamcco/markdown-preview.nvim
-
-- make cursor more visible in insert mode
-
-- enable <C-x> and <C-a> for dates  
-  https://github.com/tpope/vim-speeddating
+-   enable <C-x> and <C-a> for dates  
+    https://github.com/tpope/vim-speeddating
