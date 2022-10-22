@@ -98,7 +98,7 @@ M.lspconfig = {
         ["<leader>no"] = { ":Telescope lsp_outgoing_calls<CR>", "Code Outgoing Calls" },
         ["<leader>ns"] = { ":lua vim.lsp.buf.signature_help()<CR>", "Code Signature help" },
         -- ["<leader>nt"] = { ":lua vim.lsp.buf.type_definition()<CR>", "Code Type deifinition" },
-        ["<leader>nt"] = { ":Telescope lsp_type_definitions<CR>", "Code Type deifinition" },
+        -- ["<leader>nt"] = { ":Telescope lsp_type_definitions<CR>", "Code Type deifinition" },
         ["<leader>nr"] = { ":lua vim.lsp.buf.rename()<CR>", "Code Rename" },
         ["<leader>na"] = { ":lua vim.lsp.buf.code_action()<CR>", "Code Code action" },
         -- ["<leader>nu"] = { ":lua vim.lsp.buf.references()<CR>", "Code Usage" },
@@ -245,6 +245,12 @@ M.gitsigns = {
 M.bbye = {
     n = {
         ["<leader>fc"] = { ":Bdelete<CR>", "File Close" },
+    },
+}
+
+M.vista = {
+    n = {
+        ["<leader>nt"] = { [[:Vista!!<CR>]], "Toggel Vista" },
     },
 }
 

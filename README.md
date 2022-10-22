@@ -19,15 +19,26 @@ helpful references
 
 ## mandatory
 
--   add a tagbar (also check out class hierarchy)  
-    https://github.com/preservim/tagbar  
-    https://github.com/liuchengxu/vista.vim
+-   configure session handling  
+    https://github.com/tpope/vim-obsession
+
+-   easily run current file / test  
+    https://github.com/skywind3000/asyncrun.vim
+    https://github.com/michaelb/sniprun
+
+-   add visual debugger  
+    https://github.com/puremourning/vimspector/  
+    https://github.com/mfussenegger/nvim-dap/
+
+-   add autosaving  
+    https://github.com/907th/vim-auto-save  
+    https://github.com/Pocco81/auto-save.nvim
+
+-   code folding  
+    https://github.com/tmhedberg/simpylfold
 
 -   make quickfix & locations list toggleable  
     https://github.com/milkypostman/vim-togglelist
-
--   configure session handling  
-    https://github.com/tpope/vim-obsession
 
 -   add support for spelling
     https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTINS.md#cspell
@@ -36,26 +47,9 @@ helpful references
     https://github.com/akinsho/toggleterm.nvim  
     https://github.com/NvChad/nvterm
 
--   add a persistant scratch pad
-
--   easily run current file / test  
-    https://github.com/skywind3000/asyncrun.vim
-    https://github.com/michaelb/sniprun
-
 -   add refactoring actions
     https://github.com/ThePrimeagen/refactoring.nvim
     https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTINS.md#refactoring
-
--   add visual debugger  
-    https://github.com/puremourning/vimspector/  
-    https://github.com/mfussenegger/nvim-dap/
-
--   code folding  
-    https://github.com/tmhedberg/simpylfold
-
--   add autosaving  
-    https://github.com/907th/vim-auto-save  
-    https://github.com/Pocco81/auto-save.nvim
 
 -   command line autocompletion  
     https://github.com/gelguy/wilder.nvim

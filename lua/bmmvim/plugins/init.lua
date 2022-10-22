@@ -234,6 +234,14 @@ local plugins = {
         "jmcantrell/vim-virtualenv",
     },
 
+    -- current file tags
+    {
+        "liuchengxu/vista.vim",
+        config = function()
+            require("bmmvim.utils").configure_plugin("vista")
+        end,
+    },
+
     -- make it pretty
     {
         "sainnhe/sonokai",
