@@ -19,9 +19,6 @@ helpful references
 
 ## mandatory
 
--   configure session handling  
-    https://github.com/tpope/vim-obsession
-
 -   easily run current file / test  
     https://github.com/skywind3000/asyncrun.vim
     https://github.com/michaelb/sniprun

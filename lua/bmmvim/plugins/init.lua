@@ -242,6 +242,11 @@ local plugins = {
         end,
     },
 
+    -- sessions
+    {
+        "tpope/vim-obsession",
+    },
+
     -- make it pretty
     {
         "sainnhe/sonokai",
