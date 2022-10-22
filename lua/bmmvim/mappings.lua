@@ -106,7 +106,7 @@ M.lspconfig = {
                     header = "File Diagnostics:",
                     focusable = false,
                     prefix = function(diagnostic, _, _)
-                        return tostring(diagnostic.lnum) .. ": "
+                        return tostring(diagnostic.lnum + 1) .. ": "
                     end,
                 })
             end,
