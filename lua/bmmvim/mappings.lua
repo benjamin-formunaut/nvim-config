@@ -74,8 +74,18 @@ M.general = {
 M.lspconfig = {
     n = {
         -- diagnostic naviation
-        ["]e"] = { ":lua vim.diagnostic.goto_next()<CR>", "Next diagnostic" },
-        ["[e"] = { ":lua vim.diagnostic.goto_prev()<CR>", "Previous diagnostic" },
+        ["]e"] = {
+            function()
+                vim.diagnostic.goto_next({ float = false })
+            end,
+            "Next diagnostic",
+        },
+        ["[e"] = {
+            function()
+                vim.diagnostic.goto_prev({ float = false })
+            end,
+            "Next diagnostic",
+        },
         -- docs in floating window
         ["K"] = { ":lua vim.lsp.buf.hover()<CR>", "Docs" },
         -- code navigation
@@ -91,6 +101,7 @@ M.lspconfig = {
             -- TODO: might be less useful than Telescope diagnosts
             function()
                 vim.diagnostic.open_float({
+                    source = true,
                     scope = "buffer",
                     header = "File Diagnostics:",
                     focusable = false,

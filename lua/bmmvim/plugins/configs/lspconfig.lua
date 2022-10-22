@@ -67,6 +67,7 @@ local on_attach = function(client, bufnr)
         callback = function()
             vim.diagnostic.open_float({
                 focusable = false,
+                source = true,
             })
         end,
     })
