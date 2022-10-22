@@ -22,7 +22,7 @@ local plugins = {
         after = "nvim-treesitter",
         config = function()
             require("bmmvim.utils").configure_plugin("treesitter_context", { load_keys = false })
-        end
+        end,
     },
 
     -- autopairs
@@ -38,7 +38,7 @@ local plugins = {
         after = "nvim-treesitter",
         config = function()
             require("bmmvim.utils").configure_plugin("ts_autotag", { load_keys = false })
-        end
+        end,
     },
 
     -- comments
@@ -218,6 +218,11 @@ local plugins = {
     -- sourroundings opperators
     {
         "machakann/vim-sandwich",
+    },
+
+    -- python virtualenv
+    {
+        "jmcantrell/vim-virtualenv",
     },
 
     -- make it pretty
