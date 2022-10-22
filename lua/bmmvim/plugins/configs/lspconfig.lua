@@ -101,9 +101,6 @@ local language_options = {
                 diagnostics = {
                     -- Get the language server to recognize the `vim` global
                     globals = { "vim" },
-                    neededFileStatus = {
-                        ["codestyle-check"] = "Any",
-                    },
                 },
                 workspace = {
                     -- make the server aware of neovim runtime files,
