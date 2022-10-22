@@ -43,6 +43,8 @@ local options = {
 
     -- highlight the current line
     cursorline = true,
+    -- vertical bar
+    colorcolumn = "+1",
     -- show linenumbers
     number = true,
     relativenumber = true,
