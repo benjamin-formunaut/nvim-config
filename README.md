@@ -21,14 +21,6 @@ helpful references
 
 - find useful telescope lsp mappings (definition, references,...)
 
-- don't let sandwitch hijack v_s
-
-- install html template linter and formatter  
-  https://github.com/williamboman/mason.nvim/blob/main/PACKAGES.md#djlint
-
-- install Dockerfile language server
-  https://github.com/williamboman/mason.nvim/blob/main/PACKAGES.md#dockerfile-language-server
-
 - cmp window order by source
 
 - check out if another colorscheme works better  
@@ -72,12 +64,11 @@ helpful references
   https://github.com/907th/vim-auto-save  
   https://github.com/Pocco81/auto-save.nvim
 
-- notifications in floating windows  
-  https://github.com/rcarriga/nvim-notify  
-  https://github.com/Konfekt/vim-scratchpad
-
 - command line autocompletion  
   https://github.com/gelguy/wilder.nvim
+
+- add a temporary permanent pad  
+  https://github.com/Konfekt/vim-scratchpad
 
 - add a temporary scratch pad  
   https://github.com/mtth/scratch.vim
@@ -89,6 +80,9 @@ helpful references
 
 - make lualine prettier / more useful  
   https://github.com/nvim-lualine/lualine.nvim
+
+- install Dockerfile language server
+  https://github.com/williamboman/mason.nvim/blob/main/PACKAGES.md#dockerfile-language-server
 
 - open lsp navigations in new split
 

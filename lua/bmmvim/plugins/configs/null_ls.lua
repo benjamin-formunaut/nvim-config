@@ -35,11 +35,12 @@ local options = {
         null_ls.builtins.formatting.stylua,
         -- python
         null_ls.builtins.diagnostics.flake8,
-        --django
-        null_ls.builtins.diagnostics.curlylint,
         null_ls.builtins.diagnostics.mypy,
         null_ls.builtins.formatting.black,
         null_ls.builtins.formatting.isort,
+        --django
+        null_ls.builtins.diagnostics.djlint,
+        null_ls.builtins.formatting.djlint,
         -- postgres sql
         null_ls.builtins.formatting.sqlfluff.with({
             extra_args = { "--dialect", "postgres" },

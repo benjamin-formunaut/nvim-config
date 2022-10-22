@@ -215,6 +215,14 @@ local plugins = {
         end,
     },
 
+    -- notifications
+    {
+        "rcarriga/nvim-notify",
+        config = function()
+            vim.notify = require("notify")
+        end,
+    },
+
     -- sourroundings opperators
     {
         "machakann/vim-sandwich",
