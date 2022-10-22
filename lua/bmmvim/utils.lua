@@ -43,9 +43,12 @@ M.configure_plugin = function(plugin_name, opts)
 
     if opts.load_module then
         local module_path = "bmmvim.plugins.configs." .. plugin_name
-        local ok = pcall(require, module_path)
+        local ok, require_error = pcall(require, module_path)
         if not ok then
-            vim.notify("Unable to initialize plugin " .. plugin_name, vim.log.levels.WARN)
+            vim.notify(
+                string.format("Unable to initialize plugin %s\n%s", plugin_name, require_error),
+                vim.log.levels.WARN
+            )
             return
         end
     end

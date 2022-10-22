@@ -21,10 +21,7 @@ helpful references
 
 - find useful telescope lsp mappings (definition, references,...)
 
-- cmp window order by source
-
-- check out if another colorscheme works better  
-  https://github.com/doums/darcula
+- configure snippets (e.g. django)
 
 - add a tagbar (also check out class hierarchy)  
   https://github.com/preservim/tagbar  
