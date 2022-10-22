@@ -21,9 +21,6 @@ helpful references
 
 - find useful telescope lsp mappings (definition, references,...)
 
-- autopairs for html  
-https://github.com/windwp/nvim-ts-autotag
-
 - check out which lsp server provides better auto imports
 
 - cmp window order by source

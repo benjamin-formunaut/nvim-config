@@ -24,6 +24,14 @@ local plugins = {
             require("bmmvim.utils").configure_plugin("autopairs", { load_keys = false })
         end,
     },
+    {
+        "windwp/nvim-ts-autotag",
+        requires = "nvim-treesitter/nvim-treesitter",
+        after = "nvim-treesitter",
+        config = function()
+            require("bmmvim.utils").configure_plugin("ts_autotag", { load_keys = false })
+        end
+    },
 
     -- comments
     {
