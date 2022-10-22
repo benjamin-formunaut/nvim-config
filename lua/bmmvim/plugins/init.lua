@@ -16,6 +16,14 @@ local plugins = {
         requires = "nvim-treesitter/nvim-treesitter",
         after = "nvim-treesitter",
     },
+    {
+        "nvim-treesitter/nvim-treesitter-context",
+        requires = "nvim-treesitter/nvim-treesitter",
+        after = "nvim-treesitter",
+        config = function()
+            require("bmmvim.utils").configure_plugin("treesitter_context", { load_keys = false })
+        end
+    },
 
     -- autopairs
     {
