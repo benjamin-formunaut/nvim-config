@@ -116,7 +116,7 @@ local plugins = {
         "neovim/nvim-lspconfig",
         after = { "mason-lspconfig.nvim", "cmp-nvim-lsp" },
         config = function()
-            require("bmmvim.utils").configure_plugin("lspconfig")
+            require("bmmvim.utils").configure_plugin("lspconfig", { load_keys = false })
         end,
     },
 

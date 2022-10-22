@@ -76,13 +76,13 @@ M.lspconfig = {
         -- diagnostic naviation
         ["]e"] = {
             function()
-                vim.diagnostic.goto_next({ float = false })
+                vim.diagnostic.goto_next({ float = { focusable = false, source = true } })
             end,
             "Next diagnostic",
         },
         ["[e"] = {
             function()
-                vim.diagnostic.goto_prev({ float = false })
+                vim.diagnostic.goto_prev({ float = { focusable = false, source = true } })
             end,
             "Next diagnostic",
         },

@@ -60,17 +60,7 @@ vim.diagnostic.handlers.signs = {
 ------------------------------------------------------------------------
 
 local on_attach = function(client, bufnr)
-    -- diagnostics hover
-    vim.api.nvim_create_autocmd("CursorHold", {
-        group = vim.api.nvim_create_augroup("lsp_diagnosict_float", { clear = true }),
-        buffer = bufnr,
-        callback = function()
-            vim.diagnostic.open_float({
-                focusable = false,
-                source = true,
-            })
-        end,
-    })
+    require("bmmvim.utils").load_mappings("lspconfig", { buffer = bufnr })
 
     -- highlight the current variable and its usages in the buffer.
     if client.server_capabilities.documentHighlightProvider then
