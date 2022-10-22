@@ -21,8 +21,8 @@ helpful references
 
 - find useful telescope lsp mappings (definition, references,...)
 
-- add autoformatting & lintig  
-  https://github.com/jose-elias-alvarez/null-ls.nvim
+- autopairs for html  
+https://github.com/windwp/nvim-ts-autotag
 
 - check out which lsp server provides better auto imports
 
