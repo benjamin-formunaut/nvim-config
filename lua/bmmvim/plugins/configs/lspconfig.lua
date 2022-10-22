@@ -59,15 +59,7 @@ vim.diagnostic.handlers.signs = {
 ------------------------------------------------------------------------
 
 local on_attach = function(client, bufnr)
-    -- autoformat
-    vim.api.nvim_create_autocmd("BufWritePre", {
-        group = vim.api.nvim_create_augroup("lsp_format_sync", { clear = true }),
-        buffer = bufnr,
-        callback = function()
-            vim.lsp.buf.formatting_sync()
-        end,
-    })
-
+    -- diagnostics hover
     vim.api.nvim_create_autocmd("CursorHold", {
         group = vim.api.nvim_create_augroup("lsp_diagnosict_float", { clear = true }),
         buffer = bufnr,
@@ -119,7 +111,7 @@ local language_options = {
                     preloadFileSize = 50000,
                 },
                 format = {
-                    enable = true,
+                    enable = false,
                 },
                 -- Do not send telemetry data containing a randomized but unique identifier
                 telemetry = {
@@ -129,8 +121,7 @@ local language_options = {
         },
     },
     -- python
-    pyright = {
-    },
+    pyright = {},
 }
 
 local capabilities = require("cmp_nvim_lsp").default_capabilities()

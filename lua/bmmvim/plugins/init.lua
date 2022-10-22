@@ -151,6 +151,14 @@ local plugins = {
         "hrsh7th/cmp-nvim-lsp-signature-help",
     },
 
+    -- linting & autoformmating
+    {
+        "jose-elias-alvarez/null-ls.nvim",
+        config = function()
+            require("bmmvim.utils").configure_plugin("null_ls", { load_keys = false })
+        end,
+    },
+
     -- git
     {
         "lewis6991/gitsigns.nvim",

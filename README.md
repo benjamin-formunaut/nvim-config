@@ -43,6 +43,7 @@ https://github.com/milkypostman/vim-togglelist
 https://github.com/tpope/vim-obsession
 
 - add support for spelling
+https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTINS.md#cspell
 
 - integrated terminal  
 https://github.com/akinsho/toggleterm.nvim  
@@ -52,6 +53,10 @@ https://github.com/NvChad/nvterm
 
 - easily run current file / test  
 https://github.com/skywind3000/asyncrun.vim
+
+- add refactoring actions
+https://github.com/ThePrimeagen/refactoring.nvim
+https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTINS.md#refactoring
 
 - add visual debugger  
 https://github.com/puremourning/vimspector/  
