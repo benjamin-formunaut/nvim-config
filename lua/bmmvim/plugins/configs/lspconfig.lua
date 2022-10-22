@@ -110,7 +110,28 @@ local language_options = {
         },
     },
     -- python
-    pyright = {},
+    pyright = {
+        -- ref https://github.com/microsoft/pyright/blob/main/docs/settings.md
+        settings = {
+            pyright = {
+                disableOrganizeImports = true,
+
+            },
+            python = {
+                analysis = {
+                    typeCheckingMode = "off",
+                    diagnosticSeverityOverrides = {
+                        strictParameterNoneValue = "none",
+                        enableTypeIgnoreComments = "none",
+                        reportMissingModuleSource = "none",
+                        reportMissingImports = "none",
+                        reportUndefinedVariable = "none",
+                        reportImportCycles = "error",
+                    },
+                },
+            },
+        },
+    },
 }
 
 local capabilities = require("cmp_nvim_lsp").default_capabilities()

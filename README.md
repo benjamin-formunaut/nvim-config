@@ -21,7 +21,13 @@ helpful references
 
 - find useful telescope lsp mappings (definition, references,...)
 
-- check out which lsp server provides better auto imports
+- don't let sandwitch hijack v_s
+
+- install html template linter and formatter  
+  https://github.com/williamboman/mason.nvim/blob/main/PACKAGES.md#djlint
+
+- install Dockerfile language server
+  https://github.com/williamboman/mason.nvim/blob/main/PACKAGES.md#dockerfile-language-server
 
 - cmp window order by source
 
@@ -49,6 +55,7 @@ helpful references
 
 - easily run current file / test  
   https://github.com/skywind3000/asyncrun.vim
+  https://github.com/michaelb/sniprun
 
 - add refactoring actions
   https://github.com/ThePrimeagen/refactoring.nvim
