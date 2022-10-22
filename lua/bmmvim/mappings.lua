@@ -90,13 +90,19 @@ M.lspconfig = {
         ["K"] = { ":lua vim.lsp.buf.hover()<CR>", "Docs" },
         -- code navigation
         ["<leader>nD"] = { ":lua vim.lsp.buf.declaration()<CR>", "Code Declaration" },
-        ["<leader>nd"] = { ":lua vim.lsp.buf.definition()<CR>", "Code Definition" },
-        ["<leader>ni"] = { ":lua vim.lsp.buf.implementation()<CR>", "Code Implementation" },
+        -- ["<leader>nd"] = { ":lua vim.lsp.buf.definition()<CR>", "Code Definition" },
+        ["<leader>nd"] = { ":Telescope lsp_definitions<CR>", "Code Definition" },
+        -- ["<leader>ni"] = { ":lua vim.lsp.buf.implementation()<CR>", "Code Implementation" },
+        ["<leader>nI"] = { ":Telescope lsp_implementations<CR>", "Code Implementation" },
+        ["<leader>ni"] = { ":Telescope lsp_incoming_calls<CR>", "Code Incoming Calls" },
+        ["<leader>no"] = { ":Telescope lsp_outgoing_calls<CR>", "Code Outgoing Calls" },
         ["<leader>ns"] = { ":lua vim.lsp.buf.signature_help()<CR>", "Code Signature help" },
-        ["<leader>nt"] = { ":lua vim.lsp.buf.type_definition()<CR>", "Code Type deifinition" },
+        -- ["<leader>nt"] = { ":lua vim.lsp.buf.type_definition()<CR>", "Code Type deifinition" },
+        ["<leader>nt"] = { ":Telescope lsp_type_definitions<CR>", "Code Type deifinition" },
         ["<leader>nr"] = { ":lua vim.lsp.buf.rename()<CR>", "Code Rename" },
         ["<leader>na"] = { ":lua vim.lsp.buf.code_action()<CR>", "Code Code action" },
-        ["<leader>nu"] = { ":lua vim.lsp.buf.references()<CR>", "Code Usage" },
+        -- ["<leader>nu"] = { ":lua vim.lsp.buf.references()<CR>", "Code Usage" },
+        ["<leader>nu"] = { ":Telescope lsp_references<CR>", "Code Usage" },
         ["<leader>ne"] = {
             -- TODO: might be less useful than Telescope diagnosts
             function()
@@ -148,7 +154,7 @@ M.telescope = {
         ["<leader><leader>/"] = { ":Telescope live_grep<CR>", "Search String" },
     },
     v = {
-        ["<leader><leader>w"] = { [["zy:Telescope grep_string default_text=<C-r>z]], "Search selection" },
+        ["<leader><leader>w"] = { [["zy:Telescope grep_string default_text=<C-r>z<CR>]], "Search selection" },
     },
 }
 

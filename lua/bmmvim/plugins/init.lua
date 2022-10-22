@@ -114,7 +114,7 @@ local plugins = {
     },
     {
         "neovim/nvim-lspconfig",
-        after = { "mason-lspconfig.nvim", "cmp-nvim-lsp" },
+        after = { "mason-lspconfig.nvim", "cmp-nvim-lsp", "telescope.nvim" },
         config = function()
             require("bmmvim.utils").configure_plugin("lspconfig", { load_keys = false })
         end,
@@ -171,6 +171,7 @@ local plugins = {
     -- linting & autoformmating
     {
         "jose-elias-alvarez/null-ls.nvim",
+        after = "telescope.nvim",
         config = function()
             require("bmmvim.utils").configure_plugin("null_ls", { load_keys = false })
         end,
