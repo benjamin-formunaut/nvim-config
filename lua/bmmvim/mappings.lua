@@ -1,4 +1,5 @@
 -- Modes
+--
 --   normal_mode = "n",
 --   insert_mode = "i",
 --   visual_mode = "v",
@@ -101,8 +102,10 @@ M.lspconfig = {
             "Code Diagnostic",
         },
         ["<leader>nq"] = { ":lua vim.diagnostic.setqflist()<CR>", "Code Set loclist" },
-        ["<leader>nl"] = { ":lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>",
-            "Code List workspace folders" },
+        ["<leader>nl"] = {
+            ":lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>",
+            "Code List workspace folders",
+        },
     },
 }
 
@@ -117,7 +120,10 @@ M.telescope = {
     n = {
         ["<leader><leader><leader>"] = { ":Telescope builtin<CR>", "Search Telescope" },
         ["<leader><leader>f"] = { ":Telescope find_files<CR>", "Search Files" },
-        ["<leader><leader>a"] = { ":Telescope find_files follow=true no_ignore=true hidden=true<CR>", "Search All files" },
+        ["<leader><leader>a"] = {
+            ":Telescope find_files follow=true no_ignore=true hidden=true<CR>",
+            "Search All files",
+        },
         ["<leader><leader>b"] = { ":Telescope buffers<CR>", "Search Buffers" },
         ["<leader><leader>t"] = { ":Telescope tags<CR>", "Search Tags" },
         ["<leader><leader>r"] = { ":Telescope command_history<CR>", "Search Tags" },
@@ -157,8 +163,12 @@ M.gitsigns = {
         -- hunk navigation
         ["]g"] = {
             function()
-                if vim.wo.diff then return "]g" end
-                vim.schedule(function() require("gitsigns").next_hunk() end)
+                if vim.wo.diff then
+                    return "]g"
+                end
+                vim.schedule(function()
+                    require("gitsigns").next_hunk()
+                end)
                 return "<Ignore>"
             end,
             "Jump to next hunk",
@@ -166,8 +176,12 @@ M.gitsigns = {
         },
         ["[g"] = {
             function()
-                if vim.wo.diff then return "[g" end
-                vim.schedule(function() require("gitsigns").prev_hunk() end)
+                if vim.wo.diff then
+                    return "[g"
+                end
+                vim.schedule(function()
+                    require("gitsigns").prev_hunk()
+                end)
                 return "<Ignore>"
             end,
             "Jump to prev hunk",
@@ -177,15 +191,21 @@ M.gitsigns = {
         -- actions
         -- TODO: see if you want require("gitsigns").diffthis or a diff from another plugin
         ["<leader>hp"] = {
-            function() require("gitsigns").preview_hunk() end,
+            function()
+                require("gitsigns").preview_hunk()
+            end,
             "Preview hunk",
         },
         ["<leader>hb"] = {
-            function() package.loaded.gitsigns.blame_line() end,
+            function()
+                package.loaded.gitsigns.blame_line()
+            end,
             "Blame line",
         },
         ["<leader>ht"] = {
-            function() require("gitsigns").toggle_deleted() end,
+            function()
+                require("gitsigns").toggle_deleted()
+            end,
             "Toggle deleted",
         },
     },

@@ -20,4 +20,4 @@ end
 vim.g.vimsyn_embed = "lP"
 
 -- use english as main language
-vim.cmd [[language en_GB.UTF-8]]
+vim.cmd([[language en_GB.UTF-8]])

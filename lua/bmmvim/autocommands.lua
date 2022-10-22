@@ -12,7 +12,6 @@ function M.init()
         end,
     })
 
-
     -- notify when the current file is not in utf-8
     vim.api.nvim_create_autocmd({ "BufRead" }, {
         pattern = "*",
@@ -28,7 +27,7 @@ function M.init()
     vim.api.nvim_create_autocmd({ "BufReadPost" }, {
         pattern = "*",
         group = vim.api.nvim_create_augroup("resume_cursor_position", { clear = true }),
-        command = [[if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif]]
+        command = [[if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif]],
     })
 
     -- highlight yanked region, see `:h lua-highlight`
@@ -36,7 +35,7 @@ function M.init()
         pattern = "*",
         group = vim.api.nvim_create_augroup("highlight_yank", { clear = true }),
         callback = function()
-            vim.highlight.on_yank { higroup = "IncSearch", timeout = 300 }
+            vim.highlight.on_yank({ higroup = "IncSearch", timeout = 300 })
         end,
     })
 

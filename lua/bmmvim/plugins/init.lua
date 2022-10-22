@@ -1,4 +1,5 @@
 local plugins = {
+
     -- packer can manage itself
     { "wbthomason/packer.nvim" },
 
@@ -125,7 +126,7 @@ local plugins = {
     },
     {
         "saadparwaiz1/cmp_luasnip",
-        after = "LuaSnip"
+        after = "LuaSnip",
     },
     {
         "hrsh7th/cmp-nvim-lua",
@@ -170,14 +171,14 @@ local plugins = {
         "tpope/vim-fugitive",
         config = function()
             require("bmmvim.utils").configure_plugin("fugitive", { load_module = false })
-        end
+        end,
     },
     {
         "tpope/vim-rhubarb",
         requires = "vim-fugitive",
         config = function()
             require("bmmvim.utils").configure_plugin("rhubarb", { load_module = false })
-        end
+        end,
     },
 
     -- respect editorconfig
@@ -195,7 +196,7 @@ local plugins = {
         "moll/vim-bbye",
         config = function()
             require("bmmvim.utils").configure_plugin("bbye", { load_module = false })
-        end
+        end,
     },
 
     -- sourroundings opperators
@@ -223,7 +224,7 @@ local config = {
         removed_sym = " ",
         moved_sym = "",
         open_fn = function()
-            return require("packer.util").float { border = "single" }
+            return require("packer.util").float({ border = "single" })
         end,
     },
 }
@@ -239,7 +240,7 @@ local function ensure_packer()
 
     if fresh_install then
         vim.api.nvim_echo({ { "Installing packer.nvim", "Type" } }, true, {})
-        vim.fn.system { "git", "clone", "--depth", "1", "https://github.com/wbthomason/packer.nvim", install_path }
+        vim.fn.system({ "git", "clone", "--depth", "1", "https://github.com/wbthomason/packer.nvim", install_path })
     end
     return fresh_install
 end
@@ -259,10 +260,7 @@ local function startup(fresh_install)
     else
         local status, _ = pcall(require, "packer_compiled")
         if not status then
-            vim.notify(
-                "File packer_compiled.lua not found: run PackerSync to fix!",
-                vim.log.levels.ERROR
-            )
+            vim.notify("File packer_compiled.lua not found: run PackerSync to fix!", vim.log.levels.ERROR)
         end
     end
 end

@@ -75,7 +75,7 @@ function M.init()
     vim.g.maplocalleader = " "
 
     -- hide "match xx of xx" and other messages during auto-completion
-    vim.opt.shortmess:append "c"
+    vim.opt.shortmess:append("c")
 
     for k, v in pairs(options) do
         vim.opt[k] = v

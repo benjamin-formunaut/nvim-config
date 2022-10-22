@@ -1,4 +1,5 @@
 local ok, bufferline = pcall(require, "bufferline")
+
 if not ok then
     return
 end
@@ -6,7 +7,7 @@ end
 local options = {
     options = {
         -- disable close icon
-        middle_mouse_command = '',
+        middle_mouse_command = "",
         show_buffer_close_icons = false,
         show_close_icon = false,
 
@@ -32,9 +33,9 @@ local options = {
     },
     highlights = {
         buffer_selected = {
-            italic = false
+            italic = false,
         },
-    }
+    },
 }
 
 bufferline.setup(options)
