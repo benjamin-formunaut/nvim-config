@@ -84,6 +84,7 @@ local plugins = {
         "nvim-telescope/telescope.nvim",
         tag = "0.1.0",
         requires = { "nvim-lua/plenary.nvim", "nvim-telescope/telescope-ui-select.nvim" },
+        after = { "attempt.nvim" },
         config = function()
             require("bmmvim.utils").configure_plugin("telescope")
         end,
@@ -275,6 +276,14 @@ local plugins = {
         "milkypostman/vim-togglelist",
         config = function()
             require("bmmvim.utils").configure_plugin("togglelist", { load_module = false })
+        end,
+    },
+
+    -- scratchpad
+    {
+        "m-demare/attempt.nvim",
+        config = function()
+            require("bmmvim.utils").configure_plugin("attempt")
         end,
     },
 

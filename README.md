@@ -37,12 +37,6 @@ helpful references
     https://github.com/ThePrimeagen/refactoring.nvim
     https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTINS.md#refactoring
 
--   add a temporary permanent pad  
-    https://github.com/Konfekt/vim-scratchpad
-
--   add a temporary scratch pad  
-    https://github.com/mtth/scratch.vim
-
 -   add icons to nvimtree
 
 -   make bufferline prettier / more useful (e.g. ft icons)  

@@ -15,6 +15,15 @@ M.executable = function(name)
     return false
 end
 
+M.file_exists = function(file_path)
+    local file = io.open(file_path, "r")
+    if file ~= nil then
+        io.close(file)
+        return true
+    end
+    return false
+end
+
 M.inside_git_repo = function()
     vim.fn.system("git rev-parse --is-inside-work-tree")
     return vim.v.shell_error == 0

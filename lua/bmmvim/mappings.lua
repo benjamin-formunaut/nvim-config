@@ -39,7 +39,7 @@ M.general = {
         ["<leader>vx"] = { ":<C-u>split<CR>", "Window Split" },
         ["<leader>vv"] = { ":<C-u>vsplit<CR>", "Window VSplit" },
         ["<leader>v="] = { "<C-w>=", "Window Equalize all" },
-        ["<leader>vl"] = { "<C-w>|", "Window Max widht" },
+        ["<leader>vl"] = { "<C-w>|", "Window Max width" },
         ["<leader>vk"] = { "<C-w>_", "Window Max height" },
         ["<leader>vz"] = { ":ZoomToggle<CR>", "Window Zoom toggle" },
         -- run things
@@ -144,7 +144,7 @@ M.telescope = {
             end,
             "Search Files",
         },
-        ["<leader><leader>a"] = {
+        ["<leader><leader>F"] = {
             ":Telescope find_files follow=true no_ignore=true hidden=true<CR>",
             "Search All files",
         },
@@ -255,7 +255,7 @@ M.bbye = {
 
 M.vista = {
     n = {
-        ["<leader>nt"] = { [[:Vista!!<CR>]], "Toggel Vista" },
+        ["<leader>nt"] = { [[:Vista!!<CR>]], "Toggle Vista" },
     },
 }
 
@@ -291,6 +291,42 @@ M.ufo = {
 M.togglelist = {
     n = {
         ["<leader>qq"] = { ":call ToggleQuickfixList()<CR>", "Quickfix Open" },
+    },
+}
+
+M.attempt = {
+    n = {
+        ["<leader>an"] = {
+            function()
+                require("attempt").new_select()
+            end,
+            "New scratch",
+        },
+        ["<leader>ai"] = {
+            function()
+                require("attempt").new_input_ext()
+            end,
+            "New scratch any ext",
+        },
+        ["<leader>ar"] = {
+            function()
+                require("attempt").run()
+            end,
+            "Run scratch",
+        },
+        ["<leader>ad"] = {
+            function()
+                require("attempt").delete_buf()
+            end,
+            "Delete scratch",
+        },
+        ["<leader>ac"] = {
+            function()
+                require("attempt").rename_buf()
+            end,
+            "Rename scratch",
+        },
+        ["<leader><leader>a"] = { ":Telescope attempt<CR>", "" },
     },
 }
 
