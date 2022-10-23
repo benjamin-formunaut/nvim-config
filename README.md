@@ -27,9 +27,6 @@ helpful references
     https://github.com/puremourning/vimspector/  
     https://github.com/mfussenegger/nvim-dap/
 
--   add support for spelling
-    https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTINS.md#cspell
-
 -   integrated terminal  
     https://github.com/akinsho/toggleterm.nvim  
     https://github.com/NvChad/nvterm

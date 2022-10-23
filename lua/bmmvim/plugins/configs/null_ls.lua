@@ -31,6 +31,20 @@ local options = {
     sources = {
         -- general
         null_ls.builtins.formatting.prettier,
+        -- TODO: too noisy for now -> use when this PR is merged
+        -- ref https://github.com/jose-elias-alvarez/null-ls.nvim/pull/1154
+        -- ref https://cspell.org/configuration/
+        -- null_ls.builtins.diagnostics.cspell.with({
+        --     diagnostics_postprocess = function(diagnostic)
+        --         diagnostic.severity = vim.diagnostic.severity["HINT"]
+        --     end,
+        -- }),
+        -- null_ls.builtins.code_actions.cspell,
+        null_ls.builtins.diagnostics.codespell.with({
+            diagnostics_postprocess = function(diagnostic)
+                diagnostic.severity = vim.diagnostic.severity["HINT"]
+            end,
+        }),
         -- lua
         null_ls.builtins.formatting.stylua,
         -- python
