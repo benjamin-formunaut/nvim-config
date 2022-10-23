@@ -14,6 +14,7 @@ local options = {
             "--with-filename",
             "--line-number",
             "--column",
+            "--trim",
         },
         prompt_prefix = "   ",
         selection_caret = "  ",

@@ -138,7 +138,15 @@ M.nvim_tree = {
 M.telescope = {
     n = {
         ["<leader><leader><leader>"] = { ":Telescope builtin<CR>", "Search Telescope" },
-        ["<leader><leader>f"] = { ":Telescope find_files<CR>", "Search Files" },
+        ["<leader><leader>f"] = {
+            function()
+                local ok = pcall(require("telescope.builtin").git_files)
+                if not ok then
+                    require("telescope.builtin").find_files()
+                end
+            end,
+            "Search Files",
+        },
         ["<leader><leader>a"] = {
             ":Telescope find_files follow=true no_ignore=true hidden=true<CR>",
             "Search All files",
