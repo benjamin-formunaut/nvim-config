@@ -282,6 +282,7 @@ local plugins = {
     -- scratchpad
     {
         "m-demare/attempt.nvim",
+        after = "toggleterm.nvim",
         config = function()
             require("bmmvim.utils").configure_plugin("attempt")
         end,

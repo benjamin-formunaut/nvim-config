@@ -13,6 +13,22 @@ local get_manage_py = function()
     return false
 end
 
+
+local terminal = nil
+local present, toggleterm_terminal = pcall(require, "toggleterm.terminal")
+if present then
+    terminal = toggleterm_terminal.Terminal:new({ hidden = true })
+end
+
+local run = function(cmd)
+    if terminal ~= nil then
+        terminal:open()
+        terminal:send(cmd, true)
+    else
+        vim.cmd("!" .. cmd)
+    end
+end
+
 local options = {
     dir = "./.nvim_scratch/",
     ext_options = { "lua", "py", "" },
@@ -25,11 +41,11 @@ local options = {
             local file_path = vim.api.nvim_buf_get_name(bufnr)
             local cmd
             if manage_py then
-                cmd = "w !" .. manage_py .. " shell < " .. file_path
+                cmd = manage_py .. " shell < " .. file_path
             else
-                cmd = "w !python"
+                cmd = "python " .. file_path
             end
-            vim.cmd(cmd)
+            run(cmd)
         end,
     },
 }
