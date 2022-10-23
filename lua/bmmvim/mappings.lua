@@ -262,4 +262,10 @@ M.vista = {
     },
 }
 
+M.auto_save = {
+    n = {
+        ["<leader>ra"] = { ":ASToggle<CR>", "Toggle autosave" },
+    },
+}
+
 return M

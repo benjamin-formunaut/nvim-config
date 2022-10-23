@@ -15,6 +15,11 @@ M.executable = function(name)
     return false
 end
 
+M.inside_git_repo = function()
+    vim.fn.system("git rev-parse --is-inside-work-tree")
+    return vim.v.shell_error == 0
+end
+
 M.load_mappings = function(section, mapping_opt)
     local mappings = require("bmmvim.mappings")[section]
     if mappings == nil then

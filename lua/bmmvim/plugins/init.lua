@@ -247,6 +247,14 @@ local plugins = {
         "tpope/vim-obsession",
     },
 
+    -- -- autosaving
+    {
+        "Pocco81/auto-save.nvim",
+        config = function()
+            require("bmmvim.utils").configure_plugin("auto_save")
+        end,
+    },
+
     -- make it pretty
     {
         "sainnhe/sonokai",

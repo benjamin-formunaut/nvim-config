@@ -27,10 +27,6 @@ helpful references
     https://github.com/puremourning/vimspector/  
     https://github.com/mfussenegger/nvim-dap/
 
--   add autosaving  
-    https://github.com/907th/vim-auto-save  
-    https://github.com/Pocco81/auto-save.nvim
-
 -   code folding  
     https://github.com/tmhedberg/simpylfold
 
