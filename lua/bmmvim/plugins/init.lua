@@ -83,7 +83,7 @@ local plugins = {
     {
         "nvim-telescope/telescope.nvim",
         tag = "0.1.0",
-        requires = "nvim-lua/plenary.nvim",
+        requires = { "nvim-lua/plenary.nvim", "nvim-telescope/telescope-ui-select.nvim" },
         config = function()
             require("bmmvim.utils").configure_plugin("telescope")
         end,

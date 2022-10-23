@@ -51,3 +51,5 @@ local options = {
 }
 
 telescope.setup(options)
+
+telescope.load_extension("ui-select")

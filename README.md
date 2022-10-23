@@ -20,8 +20,10 @@ helpful references
 ## mandatory
 
 -   easily run current file / test  
+    https://github.com/rockerBOO/awesome-neovim#code-runner
     https://github.com/skywind3000/asyncrun.vim
     https://github.com/michaelb/sniprun
+    https://github.com/jedrzejboczar/toggletasks.nvim
 
 -   add visual debugger  
     https://github.com/puremourning/vimspector/  
@@ -60,6 +62,7 @@ helpful references
     https://github.com/vimwiki/vimwiki
 
 -   let gx auto open '<user>/<repo>' in github
+    https://github.com/axieax/urlview.nvim
 
 -   properly configure which-key  
     https://github.com/folke/which-key.nvim
@@ -82,7 +85,7 @@ helpful references
 -   add more text objects  
     https://github.com/wellle/targets.vim
 
--   make % laguage specific  
+-   make % language specific  
     https://github.com/andymass/vim-matchup
 
 -   check out how to use gn  
@@ -104,7 +107,7 @@ helpful references
     https://github.com/mhinz/vim-startify  
     https://github.com/goolord/alpha-nvim
 
--   add markdown preveiw  
+-   add markdown preview  
     https://github.com/iamcco/markdown-preview.nvim
 
 -   make cursor more visible in insert mode
