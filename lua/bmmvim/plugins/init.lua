@@ -255,6 +255,15 @@ local plugins = {
         end,
     },
 
+    -- code folding
+    {
+        "kevinhwang91/nvim-ufo",
+        requires = "kevinhwang91/promise-async",
+        config = function()
+            require("bmmvim.utils").configure_plugin("ufo")
+        end,
+    },
+
     -- make it pretty
     {
         "sainnhe/sonokai",

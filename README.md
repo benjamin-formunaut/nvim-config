@@ -27,9 +27,6 @@ helpful references
     https://github.com/puremourning/vimspector/  
     https://github.com/mfussenegger/nvim-dap/
 
--   code folding  
-    https://github.com/tmhedberg/simpylfold
-
 -   make quickfix & locations list toggleable  
     https://github.com/milkypostman/vim-togglelist
 

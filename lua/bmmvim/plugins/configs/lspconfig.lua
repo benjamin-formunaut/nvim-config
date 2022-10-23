@@ -115,7 +115,6 @@ local language_options = {
         settings = {
             pyright = {
                 disableOrganizeImports = true,
-
             },
             python = {
                 analysis = {

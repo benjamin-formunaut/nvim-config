@@ -268,4 +268,27 @@ M.auto_save = {
     },
 }
 
+M.ufo = {
+    n = {
+        ["zR"] = {
+            function()
+                require("ufo").openAllFolds()
+            end,
+            "Open all folds",
+        },
+        ["zM"] = {
+            function()
+                require("ufo").closeAllFolds()
+            end,
+            "Close all folds",
+        },
+        ["zp"] = {
+            function()
+                require("ufo").peekFoldedLinesUnderCursor()
+            end,
+            "Preview fold",
+        },
+    },
+}
+
 return M
