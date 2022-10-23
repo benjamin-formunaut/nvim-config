@@ -19,12 +19,6 @@ helpful references
 
 ## mandatory
 
--   easily run current file / test  
-    https://github.com/rockerBOO/awesome-neovim#code-runner
-    https://github.com/skywind3000/asyncrun.vim
-    https://github.com/michaelb/sniprun
-    https://github.com/jedrzejboczar/toggletasks.nvim
-
 -   add visual debugger  
     https://github.com/puremourning/vimspector/  
     https://github.com/mfussenegger/nvim-dap/
@@ -34,6 +28,9 @@ helpful references
     https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTINS.md#refactoring
 
 -   add icons to nvimtree
+
+-   check out bqf
+    https://github.com/kevinhwang91/nvim-bqf
 
 -   make bufferline prettier / more useful (e.g. ft icons)  
     https://github.com/akinsho/bufferline.nvim
@@ -83,9 +80,6 @@ helpful references
 
 -   something with code actions  
     https://github.com/neovim/nvim-lspconfig/wiki/Code-Actions
-
--   python virtual env support  
-    https://github.com/jmcantrell/vim-virtualenv
 
 -   insert unicode characters  
     https://github.com/chrisbra/unicode.vim

@@ -84,7 +84,7 @@ local plugins = {
         "nvim-telescope/telescope.nvim",
         tag = "0.1.0",
         requires = { "nvim-lua/plenary.nvim", "nvim-telescope/telescope-ui-select.nvim" },
-        after = { "attempt.nvim" },
+        after = { "attempt.nvim", "toggletasks.nvim" },
         config = function()
             require("bmmvim.utils").configure_plugin("telescope")
         end,
@@ -294,6 +294,21 @@ local plugins = {
         tag = "v2.2.*",
         config = function()
             require("bmmvim.utils").configure_plugin("toggleterm", { load_keys = false })
+        end,
+    },
+
+    -- task runner
+    {
+        "jedrzejboczar/toggletasks.nvim",
+        requires = {
+            'nvim-lua/plenary.nvim',
+            'akinsho/toggleterm.nvim',
+            'nvim-telescope/telescope.nvim',
+        },
+        -- to enable YAML config support
+        rocks = 'lyaml',
+        config = function()
+            require("bmmvim.utils").configure_plugin("toggletasks")
         end,
     },
 

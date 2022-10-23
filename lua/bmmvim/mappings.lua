@@ -336,4 +336,13 @@ M.toggleterm = {
     },
 }
 
+M.toggletasks = {
+    n = {
+        ["<leader><leader>r"] = { ":Telescope toggletasks spawn<CR>", "Spawn task" },
+        ["<leader><leader>R"] = { ":Telescope toggletasks select<CR>", "Select running tasks" },
+        -- TODO: find a sane mapping
+        -- ["<leader><leader>?"] = { ":Telescope toggletasks edit<CR>", "Edit task config" },
+    },
+}
+
 return M

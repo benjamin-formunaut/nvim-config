@@ -52,5 +52,7 @@ local options = {
 
 telescope.setup(options)
 
+-- TODO: move to their respective plugin config & fix load order
 telescope.load_extension("ui-select")
 telescope.load_extension("attempt")
+telescope.load_extension("toggletasks")
