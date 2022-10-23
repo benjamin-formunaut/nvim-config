@@ -167,6 +167,12 @@ local plugins = {
     {
         "hrsh7th/cmp-nvim-lsp-signature-help",
     },
+    {
+        "gelguy/wilder.nvim",
+        config = function()
+            require("bmmvim.utils").configure_plugin("wilder", { load_keys = false })
+        end,
+    },
 
     -- linting & autoformmating
     {

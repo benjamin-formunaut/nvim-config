@@ -35,9 +35,6 @@ helpful references
     https://github.com/ThePrimeagen/refactoring.nvim
     https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTINS.md#refactoring
 
--   command line autocompletion  
-    https://github.com/gelguy/wilder.nvim
-
 -   add a temporary permanent pad  
     https://github.com/Konfekt/vim-scratchpad
 
@@ -96,9 +93,6 @@ helpful references
 
 -   python virtual env support  
     https://github.com/jmcantrell/vim-virtualenv
-
--   improve search in buffer ui  
-    https://github.com/kevinhwang91/nvim-hlslens
 
 -   insert unicode characters  
     https://github.com/chrisbra/unicode.vim
