@@ -287,6 +287,15 @@ local plugins = {
         end,
     },
 
+    -- integrated terminal
+    {
+        "akinsho/toggleterm.nvim",
+        tag = "v2.2.*",
+        config = function()
+            require("bmmvim.utils").configure_plugin("toggleterm", { load_keys = false })
+        end,
+    },
+
     -- make it pretty
     {
         "sainnhe/sonokai",

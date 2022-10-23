@@ -29,10 +29,6 @@ helpful references
     https://github.com/puremourning/vimspector/  
     https://github.com/mfussenegger/nvim-dap/
 
--   integrated terminal  
-    https://github.com/akinsho/toggleterm.nvim  
-    https://github.com/NvChad/nvterm
-
 -   add refactoring actions
     https://github.com/ThePrimeagen/refactoring.nvim
     https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTINS.md#refactoring

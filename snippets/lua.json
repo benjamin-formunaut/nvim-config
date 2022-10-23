@@ -11,5 +11,17 @@
       "",
       "$1.setup(options)"
     ]
+  },
+  "Plugin list entry": {
+    "prefix": "pluglist",
+    "body": [
+      "-- ${1:description}",
+      "{",
+      "\"${2:reference}\",",
+      "config = function()",
+      "\trequire(\"bmmvim.utils\").configure_plugin(\"${3:name}\")",
+      "end,",
+      "},"
+    ]
   }
 }

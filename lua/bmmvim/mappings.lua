@@ -330,4 +330,10 @@ M.attempt = {
     },
 }
 
+M.toggleterm = {
+    t = {
+        ["<ESC>"] = { [[<C-\><C-n>]], "Enter normal mode" },
+    },
+}
+
 return M
