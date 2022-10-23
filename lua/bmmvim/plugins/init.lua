@@ -264,6 +264,14 @@ local plugins = {
         end,
     },
 
+    -- toggle quickfx- and locationlist
+    {
+        "milkypostman/vim-togglelist",
+        config = function()
+            require("bmmvim.utils").configure_plugin("togglelist", { load_module = false })
+        end,
+    },
+
     -- make it pretty
     {
         "sainnhe/sonokai",

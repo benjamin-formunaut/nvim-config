@@ -35,9 +35,6 @@ M.general = {
         ["[q"] = { ":cprev<CR>zzzv", "Previous quickfix" },
         ["]Q"] = { ":cfirst<CR>zzzv", "First quickfix" },
         ["[Q"] = { ":clast<CR>zzzv", "Last quickfix" },
-        -- TODO: replace with a toggle command
-        ["<leader>qq"] = { ":copen<CR>", "Quickfix Open" },
-        ["<leader>qc"] = { ":cclose<CR>", "Quickfix Close" },
         -- window
         ["<leader>vx"] = { ":<C-u>split<CR>", "Window Split" },
         ["<leader>vv"] = { ":<C-u>vsplit<CR>", "Window VSplit" },
@@ -288,6 +285,12 @@ M.ufo = {
             end,
             "Preview fold",
         },
+    },
+}
+
+M.togglelist = {
+    n = {
+        ["<leader>qq"] = { ":call ToggleQuickfixList()<CR>", "Quickfix Open" },
     },
 }
 

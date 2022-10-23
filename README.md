@@ -27,9 +27,6 @@ helpful references
     https://github.com/puremourning/vimspector/  
     https://github.com/mfussenegger/nvim-dap/
 
--   make quickfix & locations list toggleable  
-    https://github.com/milkypostman/vim-togglelist
-
 -   add support for spelling
     https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTINS.md#cspell
 
