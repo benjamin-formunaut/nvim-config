@@ -13,7 +13,6 @@ local get_manage_py = function()
     return false
 end
 
-
 local terminal = nil
 local present, toggleterm_terminal = pcall(require, "toggleterm.terminal")
 if present then
@@ -51,3 +50,5 @@ local options = {
 }
 
 attempt.setup(options)
+
+require("telescope").load_extension("attempt")

@@ -6,3 +6,5 @@ end
 local options = {}
 
 toggletasks.setup(options)
+
+require("telescope").load_extension("toggletasks")

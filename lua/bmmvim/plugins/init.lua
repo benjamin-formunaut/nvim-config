@@ -83,11 +83,17 @@ local plugins = {
     {
         "nvim-telescope/telescope.nvim",
         tag = "0.1.0",
-        requires = { "nvim-lua/plenary.nvim", "nvim-telescope/telescope-ui-select.nvim" },
-        after = { "attempt.nvim", "toggletasks.nvim" },
+        requires = "nvim-lua/plenary.nvim",
         config = function()
             require("bmmvim.utils").configure_plugin("telescope")
         end,
+    },
+    {
+    "nvim-telescope/telescope-ui-select.nvim",
+    after = "telescope.nvim",
+    config = function()
+            require("telescope").load_extension("ui-select")
+    end,
     },
 
     -- file explorer
@@ -282,7 +288,7 @@ local plugins = {
     -- scratchpad
     {
         "m-demare/attempt.nvim",
-        after = "toggleterm.nvim",
+        after = {"toggleterm.nvim", "telescope.nvim"},
         config = function()
             require("bmmvim.utils").configure_plugin("attempt")
         end,
@@ -307,6 +313,7 @@ local plugins = {
         },
         -- to enable YAML config support
         rocks = 'lyaml',
+        after = "telescope.nvim",
         config = function()
             require("bmmvim.utils").configure_plugin("toggletasks")
         end,
