@@ -89,11 +89,11 @@ local plugins = {
         end,
     },
     {
-    "nvim-telescope/telescope-ui-select.nvim",
-    after = "telescope.nvim",
-    config = function()
+        "nvim-telescope/telescope-ui-select.nvim",
+        after = "telescope.nvim",
+        config = function()
             require("telescope").load_extension("ui-select")
-    end,
+        end,
     },
 
     -- file explorer
@@ -219,6 +219,11 @@ local plugins = {
     -- resize windows
     {
         "simeji/winresizer",
+        config = function()
+            vim.g.winresizer_start_key = "<C-r>"
+            vim.g.winresizer_finish_with_escape = false
+            vim.g.winresizer_keycode_cancel = 27
+        end,
     },
 
     -- sane buffer killing
@@ -288,7 +293,7 @@ local plugins = {
     -- scratchpad
     {
         "m-demare/attempt.nvim",
-        after = {"toggleterm.nvim", "telescope.nvim"},
+        after = { "toggleterm.nvim", "telescope.nvim" },
         config = function()
             require("bmmvim.utils").configure_plugin("attempt")
         end,
@@ -307,12 +312,12 @@ local plugins = {
     {
         "jedrzejboczar/toggletasks.nvim",
         requires = {
-            'nvim-lua/plenary.nvim',
-            'akinsho/toggleterm.nvim',
-            'nvim-telescope/telescope.nvim',
+            "nvim-lua/plenary.nvim",
+            "akinsho/toggleterm.nvim",
+            "nvim-telescope/telescope.nvim",
         },
         -- to enable YAML config support
-        rocks = 'lyaml',
+        rocks = "lyaml",
         after = "telescope.nvim",
         config = function()
             require("bmmvim.utils").configure_plugin("toggletasks")
