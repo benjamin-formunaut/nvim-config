@@ -4,7 +4,7 @@ if not ok then
 end
 
 local options = {
-    -- enabled = false,
+    debounce_delay = 1000,
     condition = function(bufnr)
         local utils = require("auto-save.utils.data")
 
@@ -14,7 +14,8 @@ local options = {
             -- never autosave in nvim config
             and vim.fn.getcwd() ~= vim.fn.stdpath("config")
             -- only autosave when inside git repos
-            and require("bmmvim.utils").inside_git_repo() then
+            and require("bmmvim.utils").inside_git_repo()
+        then
             return true
         end
         return false
