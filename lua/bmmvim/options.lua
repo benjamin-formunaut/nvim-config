@@ -63,6 +63,7 @@ local options = {
     sidescrolloff = 3,
     -- handling long lines
     wrap = true,
+    linebreak = false,
     -- pop up menu height
     pumheight = 10,
     -- hide -- INSERT --
@@ -78,6 +79,9 @@ function M.init()
 
     -- hide "match xx of xx" and other messages during auto-completion
     vim.opt.shortmess:append("c")
+
+    -- don't auto wrap when hitting tw
+    vim.opt.formatoptions:remove({ "t", "c" })
 
     for k, v in pairs(options) do
         vim.opt[k] = v
