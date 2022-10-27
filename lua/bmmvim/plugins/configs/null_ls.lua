@@ -4,19 +4,23 @@ if not ok then
     return
 end
 
+local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
+
 local on_attach = function(client, bufnr)
     require("bmmvim.utils").load_mappings("lspconfig", { buffer = bufnr })
 
     -- autoformat on save
     -- ref https://github.com/jose-elias-alvarez/null-ls.nvim/wiki/Formatting-on-save
     if client.supports_method("textDocument/formatting") then
+        vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
         vim.api.nvim_create_autocmd("BufWritePre", {
-            group = vim.api.nvim_create_augroup("lsp_format_sync", { clear = true }),
+            group = augroup,
             buffer = bufnr,
             callback = function()
+                -- on 0.8, you should use vim.lsp.buf.format({ bufnr = bufnr }) instead
                 vim.lsp.buf.format({
                     bufnr = bufnr,
-                    filter = function()
+                    filter = function(client)
                         return client.name == "null-ls"
                     end,
                 })
@@ -49,7 +53,7 @@ local options = {
         null_ls.builtins.formatting.stylua,
         -- python
         null_ls.builtins.diagnostics.flake8,
-        null_ls.builtins.diagnostics.mypy,
+        -- null_ls.builtins.diagnostics.mypy,
         null_ls.builtins.formatting.black,
         null_ls.builtins.formatting.isort,
         --django

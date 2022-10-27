@@ -17,6 +17,14 @@ helpful references
  https://jdhao.github.io/2021/12/31/using_nvim_after_three_years/  
  https://vonheikemen.github.io/devlog/tools/neovim-plugins-to-get-started/
 
+## bugs
+
+-   sometimes autoformat stops working (maybe the autocommand is malformed?) -> might be fixed
+
+-   autosave debounce seems to be incorrect
+
+-   autocompletion for search seems useless
+
 ## mandatory
 
 -   add visual debugger  
